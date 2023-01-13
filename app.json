@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/guide/guide",
+    "pages/index/index",
+    "pages/lottery/lottery",
+    "pages/logs/logs",
+    "pages/account/account",
+    "pages/userInfo/userInfo",
+    "pages/coupon/coupon",
+    "pages/pointsManage/pointsManage",
+    "pages/pointsRecord/pointsRecord",
+    "pages/pointsShop/pointsShop",
+    "pages/award/award",
+    "pages/fullInfo/fullInfo",
+    "pages/memberRights/memberRights",
+    "pages/giftBaskets/giftBaskets",
+    "pages/lucky/lucky",
+    "pages/activity/activity",
+    "pages/agreement/agreement",
+    "pages/gzh/gzh"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "GODIVA歌帝梵",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#fff"
+  },
+  "tabBar": {
+    "color": "#fff",
+    "selectedColor": "#fff5d7",
+    "backgroundColor": "#53261b",
+    "list": [
+      {
+        "pagePath": "pages/guide/guide",
+        "text": "我的",
+        "iconPath": "images/btn-home-grey.png",
+        "selectedIconPath": "images/btn-home-yellow.png"
+      },
+      {
+        "pagePath": "pages/coupon/coupon",
+        "text": "票劵",
+        "iconPath": "images/btn-ticket-grey.png",
+        "selectedIconPath": "images/btn-ticket-yellow.png"
+      },
+      {
+        "pagePath": "pages/pointsManage/pointsManage",
+        "text": "积分",
+        "iconPath": "images/btn-point-grey.png",
+        "selectedIconPath": "images/btn-point-yellow.png"
+      }
+    ]
+  },
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ],
+  "sitemapLocation": "sitemap.json"
+}

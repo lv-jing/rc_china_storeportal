@@ -1,0 +1,356 @@
+.profile{
+  height: 210rpx;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+.profile-bg {
+  height: 210rpx;
+  width: 100%;
+  position: absolute;
+  background-size: 100% 100%;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  -webkit-justify-content: space-between;
+}
+
+.profile-img{
+  width: 130rpx;
+  height: 130rpx;
+  display: block;
+  overflow: hidden;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 60rpx);
+  top: -36rpx;
+}
+.avatar-img {
+  width: 130rpx;
+  height: 130rpx;
+}
+
+.profile-name{
+  font-size: 30rpx;
+  color: #ffe59a;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 270rpx);
+  top: -112rpx;
+  font-size: 26rpx;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #53261b; 
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #53261b;
+}
+
+input:-ms-input-placeholder{
+  color: #53261b;
+}
+
+input::-webkit-input-placeholder{
+  color: #53261b;
+}
+.xh_main{
+position: absolute;	
+width: 100%;
+min-height: 100%;
+/* background: url('../images/member/r_goldbg.jpg'); */
+background-size: 100% 100%;
+}
+.xh_top{
+padding-top: 1px;
+width: 100%;
+height: 2.6rem;
+background-size: 100% 100%;
+}
+.xh_top_head{
+margin: 0 auto;
+margin-top: .24rem;
+padding-top: .05rem;
+width: 1.5rem;
+height: 1.5rem;
+background: url(../images/member/p_headbg.png);
+background-size: 100% 100%;
+box-sizing: border-box;
+}
+.xh_top_head img{
+margin-left: .05rem; 
+width: 1.4rem;
+height: 1.4rem;
+border-radius: 50%;
+
+}
+.xh_top p{
+margin-top: .24rem;
+font-size: .26rem;
+color: #ffe59a;
+text-align: center;
+}
+/*details*/
+.xh_message{
+margin: 0 auto;
+margin-top: 70rpx;
+width: 90%;
+height: auto;
+}
+/*address*/
+.xh_address{
+height: .66rem;
+line-height: .66rem;
+font-size: .16rem;
+color: #53261b;
+display: -webkit-flex;
+}
+.xh_address p{
+font-size: .16rem;
+color: #53261b;
+}
+.xh_address img{
+margin-top: .15rem;
+margin-right: .16rem;
+width: .26rem;
+height: .32rem;
+}
+/*Personal information*/
+.xh_personal, .xh_interest {
+padding: 0;
+box-sizing: border-box;
+border:1px solid #53261b;
+border-radius: 30rpx;
+display: block;
+}
+.xh_personal li, .xh_interest li {
+height: 70rpx;
+line-height: 70rpx;
+border-top: 1px dotted #53261b;
+margin: 0 30rpx;
+display: flex;
+}
+.radio-group {
+  display: flex;
+  align-items: center;
+}
+.radio {
+  font-size: 22rpx;
+}
+radio .wx-radio-input{
+  width: 25rpx;
+  height: 25rpx;
+  background-color: transparent;
+  border: 1px solid #53261b;
+  }
+  radio .wx-radio-input.wx-radio-input-checked::before {
+    border-radius: 50%;
+    width: 25rpx;
+    height: 25rpx;
+    line-height: 25rpx;
+    text-align: center;
+    font-size: 26rpx;
+    color: #53261b;
+    background: #e7c774;
+    border: 1px solid #53261b;
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+  }
+.radio-group radio {
+  height: 20rpx;
+  margin-left: 5rpx;
+  margin-right: 10rpx;
+}
+.xh_personal li:nth-child(1),.xh_interest li:nth-child(1){
+border-top:none;
+}
+.xh_personal li p, .xh_interest li p {
+width: 30%;
+}
+.normal-text {
+  display: inline-block;
+  height: 70rpx;
+  font-size: 22rpx;
+  color: #53261b;
+  min-width: 30%;
+}
+.xh_personal li p, .xh_personal li span, .xh_interest li p, .xh_interest li span {
+margin-bottom: 0;
+font-size: 22rpx;
+color: #53261b;
+float: left;
+}
+.xh_personal li input,.xh_personal li select{
+padding: 0;
+margin-bottom: 0;
+border:0;
+width: auto;
+font-size: 22rpx;
+height: 100%;
+background: rgba(0,0,0,0);
+color: #53261b;
+}
+.xh_iconLock{
+  width: 50rpx;
+  height: 50rpx;
+  position: relative;
+  top: 15rpx;
+  float: right;
+}
+/*interest*/
+.xh_interest {
+margin-top: 40rpx;
+}
+.xh_interest li {
+justify-content: space-between;
+}
+.xh_interest li img {
+margin-top: .1rem;
+width: .5rem;
+height: .5rem;
+float: right;
+}
+.xh_interest li span {
+width: 60%;
+overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;	
+}
+/*Button*/
+.xh_btn {
+margin-top: .4rem;
+height: .7rem;
+background: #53261b;
+font-size: .22rem;
+color: #fff5d7;
+text-align: center;
+line-height: .7rem;
+border-radius: .1rem;
+}
+
+/*Pop-ups*/
+.xh_blackbg {
+position: fixed;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+background: rgba(0,0,0,.7);
+}
+.xh_pop{
+margin:auto;
+position: absolute;
+left: 0;
+top: 2.8rem;
+right: 0;
+width: 4.2rem;
+height: auto;
+border: 1px solid #ffe59a;
+border-radius: .1rem;
+overflow: hidden;
+background: #fff;
+
+}
+.xh_poptop {
+padding: 0 .34rem;
+padding-top: .4rem;
+margin-bottom: 1.65rem;
+box-sizing: border-box;
+}
+.xh_poptop p {
+margin-bottom: .5rem;
+font-size: .22rem;
+color: #53261b;
+text-align: center;
+}
+.xh_poptop ul {
+display: -webkit-flex;
+-webkit-flex-wrap: wrap;
+}
+.xh_poptop ul li {
+margin-bottom: .17rem;
+width: 1.6rem;
+height: .45rem;
+font-size: .18rem;
+
+border:1px solid #53261b;
+line-height: .45rem;
+text-align: center;
+}
+.xh_poptop ul li:nth-child(1),.xh_poptop ul li:nth-child(3){
+margin-right: .25rem;
+}
+.xh_poplist {
+color: #53261b;
+}
+.xh_active{
+background: #53261b;
+color: #ffe59a;
+}
+.xh_popbtm {
+position: absolute;
+bottom: 0;
+width: 100%;
+height: .65rem;
+display: -webkit-flex;
+}
+.xh_popbtm div {
+width: 50%;
+font-size: .2rem;
+line-height: .65rem;
+text-align: center;
+}
+.xh_popbtm div:nth-child(1){
+background:linear-gradient(to right, #ffe598, #d6ab58);
+color: #53261b;
+}
+.xh_popbtm div:nth-child(2){
+background: #53261b;
+color: #ffe59a;
+}
+#showCityPicker3{
+width: 3rem;
+overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+}
+
+.add-icon {
+  width: 50rpx;
+  height: 50rpx;
+  background-color: transparent;
+  position: relative;
+  top: 20rpx;
+}
+.btn-container {
+  margin: 30rpx auto;
+  width: 90%;
+}
+.confirm-btn {
+  margin-top: 20rp;
+  background: #53261b;
+  font-size: 26rpx;
+  color: #fff5d7;
+  text-align: center;
+  border-radius: 10rpx;
+  letter-spacing: 10rpx;
+  width: 100%!important;
+  font-weight: normal!important;
+  line-height: 50rpx;
+  padding: 20rpx;
+}
+.section {
+  width: 135rpx;
+}
+.right_picker{
+  margin-right: 10rpx;
+  font-size: 30rpx;
+}
+.right_picker_noselect{
+  color: #ccc;
+}
+.sexClass {
+  font-weight: normal;
+  width: 100%;
+}

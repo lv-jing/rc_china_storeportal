@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "v-modal": "/components/v-modal",
+    "v-loading": "/components/v-loading"
+  }
+}

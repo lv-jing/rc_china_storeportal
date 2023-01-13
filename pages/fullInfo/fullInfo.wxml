@@ -1,0 +1,84 @@
+<view>
+<view class="xh_main">
+    <view class="xh_top" style="{{bgImage}}">
+        <image src="../../images/r_logo.png" />
+    </view>
+    <view class="form question_box" hidden="{{currentPage != 0}}">
+      <view class="xh_email">
+        <input class="input"  value="{{email}}" placeholder="电子邮箱" bindinput="emailInput" placeholder-class="emailHolder"/>
+      </view>
+    </view>
+    <view class="wrapper" hidden="{{currentPage != 0}}">
+      <p id="t1">请选择偏爱接受信息渠道：（可多选）</p>
+      <ul>
+            <li wx:for="{{wayList}}">
+                <view class="xh_square">
+                    <checkbox-group bindchange="wayCheckboxChange" data-item="{{item}}">
+                        <checkbox value="{{item.value}}" checked="{{item.checked}}" />
+                    </checkbox-group>
+                </view>
+                <text>{{item.displayText}}</text>
+            </li>
+        </ul>
+    </view>
+    <view class="wrapper" hidden="{{currentPage != 0}}">
+      <p id="t1">您会对GDOIVA哪些产品感兴趣？（可多选）</p>
+      <ul>
+            <li wx:for="{{productList}}">
+                <view class="xh_square">
+                    <checkbox-group bindchange="productCheckboxChange" data-item="{{item}}">
+                        <checkbox value="{{item.value}}" checked="{{item.checked}}" />
+                     </checkbox-group>
+                </view>
+                <text>{{item.text}}</text>
+            </li>
+        </ul>
+    </view>
+    <view class="wrapper mgt100" hidden="{{currentPage != 1}}">
+      <p id="t1">您通常购买Godiva产品的用途：（可多选）</p>
+      <ul>
+            <li wx:for="{{buyList}}" class="{{item.value === 'other' ? 'other' : ''}}">
+                <view class="xh_square">
+                    <checkbox-group bindchange="buyCheckboxChange" data-item="{{item}}">
+                        <checkbox value="{{item.value}}" checked="{{item.checked}}" />
+                     </checkbox-group>
+                </view>
+                <text>{{item.text}}</text>
+                <input class="otherInput" wx:if="{{item.value === 'other'}}" value="{{item.otherValue ? item.otherValue : ''}}" bindchange="buyOtherChange"></input>
+            </li>
+        </ul>
+    </view>
+    <view class="wrapper " hidden="{{currentPage != 1}}">
+      <p id="t1">请选出适合Godiva品牌的形容词：（可多选）</p>
+      <ul>
+            <li wx:for="{{wordList}}" class="{{item.value === 'other' ? 'other' : ''}}">
+                <view class="xh_square">
+                    <checkbox-group bindchange="wordCheckboxChange" data-item="{{item}}">
+                        <checkbox value="{{item.value}}" checked="{{item.checked}}" />
+                     </checkbox-group>
+                </view>
+                <text>{{item.text}}</text>
+                <input class="otherInput" wx:if="{{item.value === 'other'}}" value="{{item.otherValue ? item.otherValue : ''}}" bindchange="wordOtherChange"></input>
+            </li>
+        </ul>
+    </view>
+    <view class="next_page_box">
+        <!-- 上一页 -->
+        <image hidden="{{currentPage === 0}}" class="prev_page" bindtap="prevPage" src="../../images/q_click.png" />
+        <!-- 下一页 -->
+        <image hidden="{{currentPage === 2}}" class="next_page" bindtap="nextPage" src="../../images/q_click.png" />
+    </view>
+    <view class="wrapper mgt100" hidden="{{currentPage !== 2}}">
+        <view class="xh_agreement">
+            <view class="xh_square1" bindtap="agreeChange">
+                <text class="{{isAgree? 'display' : 'displayNone'}}"></text>
+            </view>
+            <text>本人同意接收歌帝梵产品及活动相关信息</text>
+        </view>
+        <view class="xh_comfirm" bindtap="submit" >
+            <button disabled="{{submitDisaled}}" loading="{{submitLoading}}">确认</button>
+        </view>
+    </view>
+  </view>
+</view>
+<v-loading loading="{{loading}}" />

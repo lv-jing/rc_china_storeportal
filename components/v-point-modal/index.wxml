@@ -1,0 +1,7 @@
+<view class="point-modal-container" hidden="{{hidden}}">
+  <view class="content-container" style="{{bgImage}}">
+    <image class="close" bindtap="close" src="../../images/point-shop/close.png"/>
+    <!-- <view class="btn-container" bindtap="more"><button class="more_btn">{{btnText}}</button>
+    </view> -->
+  </view>
+</view>

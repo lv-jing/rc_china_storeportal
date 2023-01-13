@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "v-tab": "/components/v-tab",
+    "v-loading": "/components/v-loading"
+  }
+}

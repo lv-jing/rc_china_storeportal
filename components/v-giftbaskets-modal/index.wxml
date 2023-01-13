@@ -1,0 +1,10 @@
+<view class="gift-modal-container" hidden="{{hidden}}">
+  <view class="content-container">
+     <view class="end-title">黄金礼篮预约{{tip}}</view>
+     <view class="end-desrciption">
+       预约时间：
+     <view class="time">{{START_DATE_SRT.split('年')[1]}}18:00至{{END_DATE_STR.split('年')[1]}}12:00</view>
+      </view>
+    <image class="close" bindtap="close" src="{{baseUrl}}/assets/godiva/images/lucky/icon_x.png"></image>
+  </view> 
+</view>

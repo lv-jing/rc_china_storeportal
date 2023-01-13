@@ -1,0 +1,104 @@
+<view class="outer-container" style="{{fullbgStyle}}">
+    <view class="gift-container">
+        <view class="flex-row-center full-width">
+            <image src="../../images/logo_chocolate.png"/>
+        </view>
+        <view class="send-tip">
+            <view>本次活动采用邀约制，即限于收到邀约短信或邀约电话的会员预约有效。预约时间从2022年2月25日起至2022年2月28日中午12:00截止。</view>
+            <view style="margin-top: 4px;display: block;">
+                预约成功后，2022年3月10日起可至预约门店领取（具体以领取门店的营业时间为准）。
+            </view>
+        </view>
+        <view class="base-info-container flex-column">
+            <view class="flex-row info-container">
+                <view><text class="required">*</text>姓名
+                </view>
+                <input id="name" placeholder-style="font-size: 24rpx;color:#53261b;" placeholder="请输入姓名" type="text"
+                       value="{{form.name}}" maxlength="10" bindchange="onInputChange" disabled="{{inputDis}}"/>
+            </view>
+            <view class="flex-row info-container">
+                <view><text class="required">*</text>称呼
+                </view>
+                <view bindtap="openSexPicker" class="sex-input">{{form.sex ? form.sex.name : ''}}</view>
+            </view>
+            <view class="flex-row info-container">
+                <view class="phone"><text class="required">*</text>手机号码
+                </view>
+                <input type="text" class="phone-input" id="phone" value="{{form.phone}}" disabled="{{inputDis}}" maxlength="11"
+                       placeholder-style="font-size: 24rpx;color:#53261b;" placeholder="请填写会员卡号对应的手机号"
+                       bindchange="onInputChange"/>
+            </view>
+            <view class="way-container">
+                <text class="required">*</text>
+                <text class="way-title">请选择领取门店</text>
+                <ul>
+                    <li wx:for="{{wayList}}" wx:key="index" class="flex-column">
+                        <view hidden="{{emailSendHidden && item.value === 'emailSend'}}">
+                            <view class="flex-row">
+                                <!-- <view>
+                                  <checkbox-group bindchange="wayCheckboxChange" data-item="{{item}}">
+                                    <checkbox value="{{item.value}}" checked="{{item.checked}}" />
+                                  </checkbox-group>
+                                </view> -->
+                                <text class="info-container" bindtap="wayCheckboxChange">{{item.displayText}}</text>
+                            </view>
+                            <view bindtap="openStorePicker" hidden="{{!(item.value === 'self' && item.checked)}}"
+                                  class="mgt-20">
+                                <view>{{form.storeAddress ? form.storeAddress : ''}}</view>
+                            </view>
+                            <view class="mgl-40 mgt-20" hidden="{{!(item.value === 'emailSend' && item.checked)}}">
+                                <view>请填写邮寄地址</view>
+                                <view class="input-address">
+                                    <input class="address-input" id="address" placeholder="请务必输入正确的地址，以确保能送达"
+                                           type="text"
+                                           value="{{form.address}}" bindchange="onInputChange"/>
+                                </view>
+                            </view>
+                        </view>
+                    </li>
+                </ul>
+            </view>
+            <view class="advice-container">
+                <text class="mgb-20 display-inline-block">尊敬的会员，请留下您对品牌的意见或建议，我们期待聆听（选填）</text>
+                <van-field class="mgt-20" value="{{ form.advice }}" type="textarea" disabled="{{inputDis}}"
+                           autosize="{{ {maxHeight: 500, minHeight: 50} }}" bind:change="onTextAreaChange"
+                           border="{{true}}"/>
+            </view>
+            <view class="btn-container mgt-40">
+                <!-- <text class="tips">*仅限白金卡会员独享，转发无效</text> -->
+<!--                <view>-->
+<!--                    新春福利首饰盒活动详情咨询，请致电歌帝梵客服热线400-878-1926。-->
+<!--                </view>-->
+                <button class="confirm-btn" bindtap="submit" disabled="{{inputDis}}">确认提交</button>
+            </view>
+        </view>
+    </view>
+
+</view>
+<v-gift-modal hidden="{{giftHidden}}" bind:onClose="ongiftClose" tip="{{tip}}"/>
+        <!-- 性别选择 -->
+<van-action-sheet id="sex" show="{{ sexPickerShow }}" cancel-text="取消" actions="{{ actions }}" bind:cancel="onClose"
+                  bind:close="onClose" bind:select="onSexSelect"/>
+<van-notify id="van-notify"/>
+
+        <!-- 门店选择 -->
+<v-store-picker show="{{storePickerShow}}" bind:sureSelectArea="sureSelectAreaListener"/>
+
+        <!-- 弹出框 -->
+<view class="mask" wx:if="{{showModal}}">
+    <view class="ui-modal-dia-tip ui-modal-dialog ">
+        <text class="mt-header-01"></text>
+        <view class="mt-main">
+            <image src="../../images/logo_chocolate.png"/>
+            <view class="text-02" style="font-weight: 600;" wx:if="{{isValid === 1}}">预约成功</view>
+            <text wx:if="{{isValid === 1}}">2022年3月10日起<text class="text-02">可至{{form.storeShortAddress}}领取</text></text>
+            <text class="text-02" wx:if="{{isValid === 2}}">请填写正确预约信息！</text>
+            <text class="text-02" wx:if="{{isValid === 3}}">请务必输入正确手机号</text>
+            <text class="text-02">谢谢!</text>
+            <button class="btn-sure" bindtap="closeTipModal">关闭</button>
+        </view>
+    </view>
+</view>
+
+<v-exit-modal title="提示" cancelText="不需要" hidden="{{exitModalHidden}}" bind:close="closeExitModal"
+              bind:confirm="comfiemExitModal"/>

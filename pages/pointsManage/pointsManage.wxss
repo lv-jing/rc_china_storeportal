@@ -1,0 +1,129 @@
+.xh_main{
+	position: relative;	
+	width: 100%;
+	height: 100vh;
+	background-size: 100% 100%;
+}
+.xh_top{
+  padding-top: 1px;
+  width: 100%;
+  height: 210rpx;
+  background-size: 100% 100%;
+}
+.xh_integral_gz {
+  width: 200rpx;
+  height: 50rpx;
+  display: block;
+  background: #885535;
+  line-height: 50rpx;
+  text-align: center;
+  color: #fff;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  position: absolute;
+  top: 20rpx;
+  right: 20px;
+}
+.xh_integral_message{
+  margin: 0 auto;
+  width: 90%;
+  height: 350rpx;
+  background: #fff5d7;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 20px rgba(0,0,0,.5);
+  position: relative;
+  bottom: 150rpx;
+}
+
+.xh_title {
+  margin: 0 auto;
+  width: 400rpx;
+  height: 50rpx;
+  /* background: url(../../images/pointsManage/a_borderline.png); */
+  background-size: 100% 100%;
+  color: #53261b;
+  text-align: center;
+  line-height: 50rpx;
+}
+.xh_integral_p {
+    margin-top: 20rpx;
+    color: #ea610f;
+    text-align: center;
+    font-size: 34rpx;
+    display: block;
+}
+
+.xh_integral_time {
+  margin-top: 20rpx;
+  color: #53261b;
+  text-align: center;
+  display: block;
+}
+.xh_integral_other {
+  padding: 30rpx;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+}
+.xh_integral_other p {
+  color: #53261b;
+  width: 50%;
+  text-align: right;
+}
+.xh_integral_other p:first-child {
+  text-align: left;
+}
+.ahead{
+  margin: 0 auto;
+  margin-left: 45%;
+  margin-top: -50rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+.xh_integral_box, .xh_integral_box1{
+  margin: 0 auto;
+  width: 90%;
+  height: 230rpx;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,.5);
+  background-size: 100% 100%;
+  bottom: 100rpx;
+  position: relative;
+}
+.xh_integral_box1 {
+  bottom: 50rpx;
+}
+.xh_integral_tip, .xh_integral_tip1 {
+  height: 200rpx;
+  line-height: 200rpx;
+  width: 250rpx;
+  position: relative;
+  left: 60%;
+}
+.xh_integral_tip1 p {
+  color: #411a15;
+  font-size: 26rpx;
+}
+.xh_integral_tip p {
+  color: #fff5d7;
+  font-size: 26rpx;
+}
+.iconbag{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+.xh_goto {
+  width: 150rpx;
+  height: 40rpx;
+  display: block;
+  background: #885535;
+  line-height: 40rpx;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  left: 80%;
+  top: -70rpx;
+  border-radius: 2px;
+}

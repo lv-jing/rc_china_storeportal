@@ -1,0 +1,38 @@
+<view class="xh_main">
+    <view class="xh_top" style="{{topbgStyle}}">
+        <view class="xh_integral_gz" bindtap="openRuleModal">积分规则</view>
+    </view>
+    <!-- 积分展示 -->
+    <view class="xh_integral_message">
+        <image class="ahead" src="../../images/pointsManage/a_head.png" />
+        <view class="xh_title" style="background-image: url('../../images/pointsManage/a_borderline.png')">当前总积分 </view>
+        <p class="xh_integral_p">{{totalPoints ? totalPoints : 0}}</p>
+        <p class="xh_integral_time" >会员等级有效期：{{endTime ? endTime : ''}}</p>
+        <view class="xh_integral_other">
+            <p>可用积分：{{canUsePoints ? canUsePoints : 0}}</p>
+            <p>冻结积分：{{freezingPoints ? freezingPoints :0}}</p>
+        </view>
+    </view>
+    <view class="xh_integral_box" style="{{buyBgImage}}">
+        <view class="xh_integral_tip">
+            <image class="iconbag" src="../../images/pointsManage/a_iconbag.png" />
+            <p>消费历史记录</p>
+        </view>
+        <a class="xh_goto" bindtap="toPointsRecord" data-type="1">立即前往</a>
+    </view>
+    <view class="xh_integral_box1" style="{{pointsBgImage}}">
+        <view class="xh_integral_tip1">
+            <image class="iconbag" src="../../images/pointsManage/a_icontext.png" />
+            <p>积分明细</p>
+        </view>
+        <a class="xh_goto" bindtap="toPointsRecord" data-type="2">立即前往</a>
+    </view>
+
+    <v-point-rule-modal
+        title="- GODIVA会员积分使用细则 -"
+        hidden="{{ruleModalHidden}}"
+        bind:close="closeRuleModal"
+        bind:confirm="comfiemRuleModal"
+    ></v-point-rule-modal>
+</view>
+<v-loading loading="{{loading}}" />

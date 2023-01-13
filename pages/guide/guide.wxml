@@ -1,0 +1,129 @@
+<!-- theme_1类为白金会员主题样式，theme_2类为经典会员主题样式，theme_3类为金卡会员主题样式 -->
+<view class="n-container theme_2" style="{{fullbgStyle}}">
+
+  <view class="n-top">
+    <view class="n-top-inner" style="{{topbgStyle}}">
+      <view class="model"></view>
+      <view class="barcode card-code hideCode {{tempImage ? 'display-none' : ''}}">
+        <canvas canvas-id="barcode" style="z-index: -1" />
+      </view>  
+      <view class="star-container">
+        <image src="../../images/star.png" />
+        <text>会员等级有效期：{{member.endTime ? member.endTime : ''}}</text>
+      </view>
+      <view wx:if="{{!toLuckyHiddren}}">
+        <view>
+          <view>
+            <image bindtap="linkToLucky" class="choujiang" src="../../images/image_box.png"></image>
+            <image class="arrow" bindtap="linkToLucky" src="../../images/icon_arrow.png"></image>
+            <view class="lucky-go">
+              <text bindtap="linkToLucky">小积分 赢大奖</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="n-content">
+    <view class="n-cards-container">
+      <view class="n-cards">
+        <view class="card-bg card-front {{cardFront? '' : 'front-transform'}}" style="{{cardFrontBgImage}}">
+          <i class="card-rotate" style="{{cardRotate}}" bindtap="rotateCard"></i>
+          <!-- name字段不使用了 -->
+          <text class="card-user ">{{member.nickname ? member.nickname : ''}}</text>
+          <text class="n-cards__text">{{member.levelName}}</text>
+        </view>
+        <view class="card-bg card-back {{cardFront? '' : 'back-transform'}}" style="{{cardBackBgImage}}">
+          <i class="card-rotate" style="{{cardRotate}}" bindtap="rotateCard"></i>
+          <ul wx:if="{{member.level == 'v1'}}">
+            <li>享1倍积分</li>
+          </ul>
+          <ul wx:if="{{member.level == 'v2'}}">
+            <li>购买正价产品可享9折</li>
+            <li>生日月份获生日礼物一份</li>
+            <li>生日月购买正价产品可享8折一次</li>
+            <li>1.5倍积分</li>
+          </ul>
+          <ul wx:if="{{member.level == 'v3'}}">
+            <li>购买正价产品可享8折</li>
+            <li>生日月份获生日礼物一份</li>
+            <li>2倍积分</li>
+            <li>白金卡礼篮</li>
+          </ul>
+          <view class="barcode card-code">
+            <image src="{{tempImage}}" />
+            <view class="barnum">{{code}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="n-account">
+      <view class="card-type">
+        <span class="pull-left card-current">经典卡 Classic</span>
+        <span class="">金卡 Gold</span>
+        <span class="pull-right ">白金卡 Platinum</span>
+      </view>
+      <view class="card-progress">
+        <!-- card-progress-bar宽度表示积分进度 -->
+        <view
+          class="card-progress-bar {{member.level === 'v1' ? 'classicWidth' : member.level === 'v2' ?  'goldWidth' :  member.level === 'v3' ?  'platinumWidth' : ''}}">
+          <image src="../../images/dot.png"></image>
+        </view>
+      </view>
+      <text class="card-integral">{{member.sourceY ? member.sourceY : 0}}可用积分</text>
+    </view>
+    <view class="n-menu {{inited?'':'disabled'}}">
+      <view class="n-menu__item border-right border-bottom" bindtap="toUserInfo">
+        <image src="../../images/icon1.png" mode="widthFix"></image>
+        <text>个人信息</text>
+      </view>
+      <view class="n-menu__item border-right border-bottom" bindtap="toCoupon">
+        <image src="../../images/icon2.png" mode="widthFix"></image>
+        <text>我的票券</text>
+      </view>
+      <view class="n-menu__item border-bottom" bindtap="toPointsManage">
+        <image src="../../images/icon3.png" mode="widthFix"></image>
+        <text>积分管理</text>
+      </view>
+      <view class="n-menu__item border-right" bindtap="toPointsShop">
+        <view class="hot-container">
+          <view class="hot">
+            <image src="../../images/hot.png" />
+          </view>
+          <image src="../../images/icon4.png" mode="widthFix" />
+        </view>
+        <text>积分商城</text>
+      </view>
+      <view class="n-menu__item border-right" bindtap="toAward">
+        <image src="../../images/icon5.png" mode="widthFix"></image>
+        <text>额外奖励</text>
+      </view>
+      <view class="n-menu__item" bindtap="toRulPage">
+        <image src="../../images/icon6.png" mode="widthFix"></image>
+        <text>会员权益</text>
+      </view>
+    </view>
+  </view>
+  <view class="n-bottom">
+    <view><text style="margin-right: 17rpx">*</text>查看更多规则请点击<text style="text-decoration: underline;margin-left: 10rpx"
+        bindtap="openRuleModal">章程</text></view>
+  </view>
+  <v-point-rule-modal title="- GODIVA会员积分使用细则 -" hidden="{{ruleModalHidden}}" bind:close="closeRuleModal"
+    bind:confirm="comfiemRuleModal"></v-point-rule-modal>
+  <view class="xh_blackbg" hidden="{{luckyHiddren}}">
+    <image class="box" bindtap="modalToLucky"  src="../../images/box1.png"/>
+    <button class="open-lucky" bindtap="modalToLucky">立即打开</button>
+    <image class="close" bindtap="hideLucky" src="{{baseUrl}}/assets/godiva/images/lucky/icon_x.png" />
+  </view>
+</view>
+<v-loading loading="{{loading}}" />
+<v-exit-modal title="提示" cancelText="退出程序" hidden="{{exitModalHidden}}" bind:close="closeExitModal"
+  bind:confirm="comfiemExitModal" />
+<!-- <view class="modalAgree modalDlg" wx:if="{{showExit}}">
+    <text class="title">提示</text>
+    <text class="content">您还不是GOviewA会员，需要注册成会员吗？</text>
+    <view class="footer">
+        <navigator class="ui-btn" target="miniProgram" open-type="exit">不需要</navigator>
+        <button class="btn-sure" bindtap="toRegister">好的</button>
+    </view>
+</view>  -->

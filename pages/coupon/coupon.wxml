@@ -1,0 +1,60 @@
+<view class="xh_main">
+  <view class="xh_top" style="{{couponBgImage}}"></view>
+  <ul class="xh_nav">
+    <li class="{{item.active ? 'active' : ''}}" wx:for="{{couponTabList}}" bindtap="changeTab"
+      data-value="{{item.value}}">
+      <p>{{item.text}}</p>
+    </li>
+  </ul>
+  <ul class="xh_classify">
+    <li class="{{item.active ? 'active' : ''}}" wx:for="{{coupons}}" bindtap="changeCouponType"
+      data-value="{{item.value}}">{{item.text}}</li>
+  </ul>
+
+  <!-- card -->
+  <view class="xh_cash" hidden="{{currentCouponList.length === 0}}">
+    <ul class="xh_cashList">
+      <li wx:for="{{currentCouponList}}">
+        <view class="xh_cashTop" wx:if="{{item.coupon}}">
+          <image src="{{baseUrl}}{{item.coupon.pic1}}" />
+          <!-- <image src="../../images/card_bg1.png" /> -->
+          <view class="xh_cashTop_text">
+            <view style="display: flex">
+              <text class="xh_cashTop_name">{{item.coupon.name}}</text>
+              <view class="xh_tip1" wx:if="{{currentTab === 1}}" bindtap="openCodeModal" data-code="{{item.couponNo}}"
+                data-cid="{{item.id}}">
+                立即使用
+              </view>
+              <image class="xh_used" wx:if="{{currentTab === 2}}" src="../../images/coupon/c_used.png" />
+              <image class="xh_timed" wx:if="{{currentTab === 3}}" src="../../images/coupon/c_timed.png" />
+            </view>
+            <view class="xh_cashTop_info">
+              <rich-text class="info" nodes="{{item.coupon.info}}"></rich-text>
+            </view>
+          </view>
+        </view>
+        <view class="xh_cashBtm">
+          <text>使用有效期：{{item.useBeginDate}} - {{item.useEndDate}}</text>
+        </view>
+      </li>
+    </ul>
+  </view>
+
+  <v-modal hidden="{{codeModalhidden}}" showConfirmButton="{{showConfirmButton}}"
+    confimText="{{!alreadyConfirm ? '确认消费' : '确定核销'}}" cancelText="返回" confirmDisabled="{{confirmDisabled}}"
+    confirmLoading="{{confirmLoading}}" bind:close="closeCodeModal" bind:confirm="confirmUseCoupon">
+    <view>
+      <view class="modal-text-tip">
+        <text wx:if="{{!alreadyConfirm}}">本卡券使用请在门店柜员的帮助下进行，切勿自行操作。一经确认即视作为成功使用不作恢复</text>
+        <text wx:else>请您再次确认于GODIVA店内核销本卡券，点击“确认核销”完成卡券使用</text>
+      </view>
+      <view class="wrapper">
+        <view class="card-code">
+          <canvas class="code-canvas" canvas-id="barcode"></canvas>
+          <view class="barnum">{{code}}</view>
+        </view>
+      </view>
+    </view>
+  </v-modal>
+</view>
+<v-loading loading="{{loading}}" />

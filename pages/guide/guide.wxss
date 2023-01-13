@@ -1,0 +1,533 @@
+@import '../index/index.wxss';
+.model{
+  background: #3333;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+}
+.n-container {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.n-top {
+  width: 100%;
+  position: relative;
+  height: 380.31rpx;
+  background-image: linear-gradient(to bottom, #e9b16a 0%, #6d442b 100%);
+}
+
+.n-top-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/* 翻转 */
+.n-cards-container {
+  perspective: 1000;
+  perspective-origin: 50% 50%;
+}
+
+.n-cards {
+  width: 88%;
+  height: 400rpx;
+  margin: -201rpx auto 52rpx;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  transform: rotateY(0deg);
+  transition: transform .5s;
+}
+
+.back-transform {
+  transform: rotateY(0deg) !important;
+}
+
+.front-transform {
+  transform: rotateY(180deg) !important;
+}
+
+.card-back {
+  transform: rotateY(-180deg);
+  transition: transform .5s;
+  /* position: relative; */
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+}
+
+/* 翻转---------结束 */
+.n-cards .card-back ul {
+  padding: 100rpx;
+  list-style-position: inside;
+  list-style: circle;
+}
+
+.n-cards .card-back li {
+  font-size: 22rpx;
+  line-height: 26rpx;
+  color: #340f04;
+  display: block;
+  margin-top: 10rpx;
+  padding-left: 70rpx;
+  /* list-style: circle; */
+}
+
+.n-cards .card-back ul li::before {
+  content: '';
+  width: 20rpx;
+  height: 20rpx;
+  background-color: red;
+}
+
+.n-cards .card-back .card-code {
+  position: absolute;
+  left: 20rpx;
+  bottom: 50rpx;
+  width: 600rpx;
+  height: 50rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.barnum {
+  /* width: 670rpx;
+  height: 100rpx;
+  line-height: 100rpx; */
+  font-size: 18rpx;
+  /* font-weight: bold; */
+  text-align: center;
+  letter-spacing: 5rpx;
+  white-space: nowrap;
+}
+
+.card-code>canvas {
+  width: 350rpx;
+  height: 50rpx;
+}
+
+.card-rotate {
+  position: absolute;
+  top: 30rpx;
+  right: 35rpx;
+  width: 40rpx;
+  height: 40rpx;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.n-cards .card-user {
+  position: absolute;
+  right: 50rpx;
+  bottom: 65rpx;
+  font-size: 24rpx;
+  color: #53261b;
+  text-align: right;
+}
+
+.n-cards .n-cards__text {
+  position: absolute;
+  right: 50rpx;
+  bottom: 32rpx;
+  font-size: 20rpx;
+  color: #53261b;
+  font-weight: bold;
+  text-align: right;
+}
+
+.n-account {
+  margin-top: 10.4rpx;
+  padding: 0 40.35rpx;
+}
+
+.card-type,
+.card-integral {
+  text-align: center;
+  font-size: 20rpx;
+}
+
+.card-integral {
+  display: block;
+  width: 100%;
+}
+
+.card-progress {
+  margin: 20rpx 0;
+  width: 100%;
+  height: 20rpx;
+  border-radius: 5px;
+}
+
+.card-progress-bar {
+  position: relative;
+  height: 20rpx;
+  transition: all .5s;
+  border-radius: 5px;
+  background: linear-gradient(to right, #c39846, #8e4a0f)
+}
+
+.card-progress-bar image {
+  position: absolute;
+  top: 50%;
+  right: -6rpx;
+  width: 30rpx;
+  height: 30rpx;
+  transform: translateY(-50%);
+}
+
+/*积分*/
+.theme_2 .n-account .card-type {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8rpx;
+  color: #914e12;
+}
+
+.theme_2 .card-progress {
+  background: #763525;
+}
+
+.theme_2 .n-account .card-current,
+.theme_2 .n-account .card-integral {
+  color: #53261b;
+}
+
+.n-menu {
+  margin-top: 47rpx;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.n-menu .n-menu__item {
+  padding: 25.6rpx 0;
+  width: 33.33%;
+  box-sizing: border-box;
+}
+
+.n-menu.disabled .n-menu__item {
+  opacity: .5;
+}
+
+.n-menu .n-menu__item image {
+  display: block;
+  margin: 0 auto;
+  width: 28%;
+}
+
+.n-menu .n-menu__item text {
+  font-size: 20rpx;
+  line-height: 2;
+  color: #53261b;
+}
+
+.border-right {
+  border-right: 1px dotted #a0674d;
+}
+
+.border-bottom {
+  border-bottom: 1px dotted #a0674d;
+}
+
+.theme_2 li p {
+  color: #53261b;
+}
+
+.n-bottom {
+  padding: 45rpx 0 0 60rpx;
+  font-size: 17rpx;
+  color: #53261b;
+}
+
+/* 弹框 */
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 9000;
+  opacity: 0.7;
+}
+
+.modalDlg {
+  width: 580rpx;
+  height: 756rpx;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  margin: -370rpx 85rpx;
+  background-color: #fff;
+  border-radius: 12rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2rpx solid #ffe59a;
+  overflow: hidden;
+}
+
+.modalDlg .md-main {
+  position: relative;
+  padding-top: 1px;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  color: #53261b;
+  font-weight: bold;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  padding: 1rpx 0 0;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10%;
+}
+
+.modalDlg .md-main .title {
+  display: block;
+  text-align: center;
+  font-size: 32rpx;
+  padding: 20rpx 0;
+}
+
+.modalDlg .md-main .line {
+  position: relative;
+  display: flex;
+  margin-bottom: 12rpx;
+  line-height: 1.6;
+  margin: 0 40rpx 0 55rpx;
+  font-size: .9em;
+}
+
+.modalDlg .md-main .content {
+  flex: 1;
+  box-sizing: border-box;
+  height: 80%;
+}
+
+.modalDlg .md-main .number {
+  position: absolute;
+  left: -40rpx;
+  width: 36rpx;
+  height: 36rpx;
+  color: #fff;
+  border-radius: 50%;
+  background: #53261b;
+  line-height: 36rpx;
+  text-align: center;
+  font-size: 23rpx;
+  font-weight: normal;
+  top: 4rpx;
+}
+
+.modalDlg .md-footer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+}
+
+.modalDlg .md-footer button {
+  width: 50%;
+  font-weight: normal;
+  font-size: 30rpx;
+  height: 100%;
+  border-radius: 0;
+}
+
+.modalDlg .md-footer button:nth-child(1) {
+  background: linear-gradient(to right, #ffe598, #d6ab58);
+  color: #53261b;
+}
+
+.modalDlg .md-footer button:nth-child(2) {
+  background: #53261b;
+  color: #ffe59a;
+}
+
+.modalDlg .md-progress {
+  position: absolute;
+  right: 27rpx;
+  width: 8rpx;
+  height: 75%;
+  background: #d8ac59;
+  overflow: hidden;
+  top: 94rpx;
+}
+
+.modalDlg .md-progress .inner {
+  background: #53261b;
+}
+
+.display-b {
+  display: block !important;
+}
+
+.display-none {
+  display: none !important;
+}
+
+.classicWidth {
+  width: 15%;
+}
+
+.goldWidth {
+  /* width: 15%; */
+  width: 50%;
+}
+
+.platinumWidth {
+  /* width: 15%; */
+  width: 95%;
+}
+
+.card-code image {
+  width: 65%;
+  height: 100%;
+}
+
+.disOp {
+  opacity: 0;
+}
+
+.hideCode {
+  position: fixed;
+  top: -1250rpx;
+}
+
+.star-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  position: relative;
+  top: -165rpx;
+  width: 80%;
+  z-index: 2;
+}
+
+.star-container image {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 10rpx;
+  line-height: 20rpx;
+}
+
+.star-container text {
+  color: #c3ad8a;
+  font-size: 16rpx;
+  line-height: 20rpx;
+}
+
+.hot-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+}
+
+.hot {
+  height: 30rpx;
+  width: 30rpx !important;
+  position: absolute;
+  left: 25%;
+  bottom: 15%;
+}
+
+.hot image {
+  height: 30rpx;
+  width: 30rpx !important;
+}
+
+.xh_blackbg {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .7);
+}
+
+.open-lucky {
+  width: 300rpx;
+  height: 100rpx;
+  display: block;
+  background: #E5C497;
+  font-size: 32rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #351508;
+  letter-spacing: 1px;
+  border-radius: 25px;
+  position: absolute;
+  top: 56%;
+  right: 33%;
+}
+
+.box {
+  position: absolute;
+  top: 33%;
+  right: 20%;
+  height: 250rpx;
+  width: 250px;
+}
+
+.close {
+  position: absolute;
+  right: 48%;
+  width: 35px;
+  height: 35px;
+  top: 70%;
+}
+
+.lucky-go {
+  width: 120px;
+  padding: 10px 0 10px 65px;
+  margin-left: 30px;
+  margin-top: 8px;
+}
+
+.choujiang {
+  width: 70px;
+  height: 55px;
+  position: absolute;
+  left: 25px;
+  top: 10px;
+}
+
+.lucky-go text {
+  color: #fff;
+  font-size: 18px;
+}
+
+.arrow {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: 210px;
+  top: 29.5px;
+}

@@ -1,0 +1,237 @@
+body,dl,dd,ul,ol,h1,h2,h3,h4,h5,h6,p,form,input,textarea,button,th,td{margin:0;padding:0}
+img,iframe{border:0;}
+table{border-collapse:collapse;border-spacing:0;table-layout:fixed}
+ol,ul{list-style:none outside none}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:bold}
+em,strong{font-style:normal;font-weight:bold}
+body,textarea,select,textarea,input{font-family:"Microsoft Yahei";}
+select,textarea,input{border: 0;outline: none;resize:none}
+a,button{cursor:pointer;text-decoration:none;}
+/* Default*/
+/*input remove X from ie10 and above*/
+::-ms-clear, ::-ms-reveal{display:none;}
+/*div{-webkit-tap-highlight-color: rgba(255,255,255,.2); }*/
+/*input remove the outer border when chrome selects input*/
+input{outline:none;border:0;}
+body,div,ul,li,a,p,h4{
+    margin: 0;
+    padding: 0;
+    font-size: .24rem;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    display: inline-block;
+}
+img{
+	display: block;
+	width: 100%;
+}
+.pull-left{
+    float: left!important;
+}
+.pull-right{
+    float: right!important;
+}
+.text-ellipsis2{
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+    white-space: initial;
+}
+.text-ellipsis3{
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+    white-space: initial;
+}
+.m-left-2{
+	display: block;
+	margin-left: .2rem;
+}
+.m-right-2{
+	display: block;
+	margin-right: .2rem;
+}
+.w {
+	width: .2rem;
+}
+.h-20{
+	height: .2rem;
+}
+.text-base{
+	color: #eb7686 !important;
+}
+.clear:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+/* Animation*/
+
+.floatlr{
+	-webkit-animation: floatlr 2s infinite;
+  	animation: floatlr 2s infinite; 
+}
+
+@-webkit-keyframes floatlr {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    50% {
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+}
+@keyframes floatlr {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    50% {
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+}
+
+.fadeInOut {
+	-webkit-animation: fadeInOut 2s infinite;
+  	animation: fadeInOut 2s infinite; 
+}
+@-webkit-keyframes fadeInOut {
+    0% {
+       	opacity: 1;
+    }
+    50% {
+       	opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fadeInOut {
+    0% {
+       	opacity: 1;
+    }
+    50% {
+       	opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.moveInOut {
+    -webkit-animation: moveInOut 6s infinite;
+    animation: moveInOut 6s infinite; 
+}
+@-webkit-keyframes moveInOut {
+    0% {
+        opacity: 0;
+        top: 1.9rem;
+        left: .5rem;
+        display: block;
+    }
+    25% {
+        opacity: 1;
+        top: 2rem;
+        left: .15rem;
+    }
+    100% {
+        opacity: 1;
+        top: 3.5rem;
+        left: .75rem;
+        display: none
+    }
+}
+@keyframes moveInOut {
+    0% {
+        opacity: 0;
+        top: 1.9rem;
+        left: .5rem;
+         display: block;
+    }
+    25% {
+        opacity: 1;
+        top: 2rem;
+        left: .15rem;
+    }
+    100% {
+        opacity: 1;
+        top: 3.5rem;
+        left: .75rem;
+        display: none
+    }
+}
+/*Pop-ups*/
+.pop_black{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,.7);
+
+}
+.pop_box{
+    position: absolute;
+    margin:auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom:0;
+    width: 5.8rem;
+    height: 4.98rem;
+    background: url(../images/pop_bg.png);
+    background-size: 100% 100%;
+}
+.pop_box img{
+    width: 2.35rem;
+    height: 1.7rem;
+    margin:0 auto;
+    margin-top: .75rem;
+}
+.pop_box p:nth-child(2){
+    margin-top: .3rem;
+    font-size: .32rem;
+    line-height: .32rem;
+    color: #231806;
+    text-align: center;
+}
+.pop_box p:nth-child(3){
+    margin-top: .1rem;
+    font-size: .24rem;
+    color: #231806;
+    text-align: center;
+}
+.pop_box div{
+    width: 3.95rem;
+    height: .7rem;
+    margin:0 auto;
+    margin-top: .35rem;
+
+    text-align: center;
+    font-size: .28rem;
+    line-height: .7rem;
+    color: #eac169;
+    background: url(../images/pop_btn.png);
+    background-size: 100% 100%;
+
+}

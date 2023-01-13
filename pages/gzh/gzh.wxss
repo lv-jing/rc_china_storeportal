@@ -1,0 +1,13 @@
+/* pages/gzh/gzh.wxss */
+.container {
+  position: relative;
+  height: 100vh;
+  background-color: #fff1e8;
+}
+
+/* .qr {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+} */

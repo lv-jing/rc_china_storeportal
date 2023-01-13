@@ -1,0 +1,64 @@
+ <!-- style="{{fullbgStyle}}" -->
+
+<view class="shop-wrapper" mode="widthFix" style="{{fullbgStyle}}">
+<!--  <view class="n-top" style="{{bannerBgImage}}"></view>-->
+  <view class="main" style="{{fullbgStyle}}">
+    <!-- 头部 -->
+    <view class="title_menu">
+        <text data-type="0" class="{{ type == 0 ? 'active' : ''}}" bindtap="changeTab">线下门店专区</text>
+        <text data-type="1"  class="{{ type == 1 ? 'active' : ''}}" bindtap="changeTab">www.Godiva.cn专区</text>
+    </view>
+    <!-- card -->
+    
+    <view class="change-list" >
+      <view class="xh_cashList" >
+        <view class="xh_cashList-item" wx:for="{{currentCouponList}}" >
+          <view class="xh_cashTop" style="opacity: {{item.totalNum - item.currentNum === 0 ? '0.2' : '1' }}">
+            <image src="{{baseURL}}/{{item.pic1}}" />
+            <view class="right-info">
+                  <view>所用积分：<text class="point-title">{{item.title}}</text></view>
+                  <view >{{item.name}}</view>
+                  <view  class="info" >限中国大陆地区指定零售门店使用</view>
+                  <!-- <rich-text class="info" nodes="{{item.info}}"></rich-text> -->
+                   <view>兑换有效期：{{item.showBeginDate}} - {{item.showEndDate}}</view>
+            </view>
+          </view>
+          <view class="xh_cashBtm" style="opacity: {{item.totalNum - item.currentNum === 0 ? '0.2' : '1' }}">
+            <view class="kucun">剩余库存：<text class="num">{{item.totalNum - item.currentNum}}</text></view>
+            <view class="border"></view>
+            <text class="get-btn"  bindtap="openExchangeModal" data-current="{{item}}">立即兑换</text>
+          </view>
+          <view wx:if="{{item.totalNum - item.currentNum === 0}}" class="over-img">
+            <image src="../../images/point-shop/over.png"/>
+          </view>
+        </view>
+      </view>
+    </view>
+   
+    <view class="bottom-container">
+      <view>
+        <p>商城兑换规则：</p>
+        <p>1. 每种优惠券每位会员限兑换一张。</p>
+        <p>2. 积分商城中可供兑换的优惠券或产品将不定期更换，请以实际显示的内容为准。</p>
+        <p>3. 每项优惠券或产品将对应消耗指定数量的积分。</p>
+        <p>4. 优惠券有指定的有效期限和使用规则，兑换时请注意查看并在有效期限内使用，逾期作废。</p>
+        <p>5. 一经兑换，不可撤销，请仔细核对后进行兑换。</p>
+        <p>6. 如有疑问可致电： 400 878 1926。</p>
+      </view>
+    </view>
+
+  </view>
+
+  <v-exchange-modal
+        title=""
+        hidden="{{exchangeModalHidden}}"
+        confirmDisabled="{{confirmDisabled}}"
+        confirmLoading="{{confirmLoading}}"
+        coupon="{{currentCoupon}}"
+        confimText="确认"
+        bind:close="closeExchangeModal"
+        bind:confirm="comfiemExchangeModal"
+    ></v-exchange-modal>
+</view>
+<v-loading loading="{{loading}}" />
+<v-point-modal hidden="{{pointModalHidden}}" bind:onClose="onClose" bind:onMore="toPointsLeyuan" title="非常抱歉，您的积分兑换不足" btnText="获取更多积分"/>

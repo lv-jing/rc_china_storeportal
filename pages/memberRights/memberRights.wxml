@@ -1,0 +1,195 @@
+<view class="n-container">
+	<view class="n-top" style="{{bannerBgImage}}"></view>
+	<!-- <view class="scroll-container">
+		<scroll-view class="scroll-box" scroll-x scroll-with-animation scroll-into-view="{{toView}}" bindtouchstart="touchStart" bindtouchend="touchEnd">
+			<view class="swiper-wrapper">
+				<view class="swiper-slide theme_2 card-box" id="card_0">
+					<view class="n-card" id="card2">
+						<view class="card-front j-front2" style="{{normalBgImage}}">
+							<p class="card-user">****</p>
+							<p class="card-name">Classic 经典卡</p>
+						</view>
+						<view class="card-back j-back2" hidden="hidden">
+							<i class="card-rotate j-rotate2"></i>
+							<ul>
+							</ul>
+							<image class="card-code" src="../../images/card/card_rotate.png" alt="" />
+						</view>
+					</view>
+				</view>
+				<view class="swiper-slide theme_3" id="card_1">
+					<view class="n-card" id="card3">
+						<view class="card-front j-front3 {{ currentView === 0 ? 'card-left0' : '' }}" style="{{goldBgImage}}">
+							<p class="card-user"></p>
+							<p class="card-name">Gold 金卡</p>
+						</view>
+						<view class="card-back j-back2" hidden="hidden">
+							<i class="card-rotate j-rotate2"></i>
+							<ul>
+							</ul>
+							<image class="card-code" src="../../images/card/card_rotate.png" alt="" />
+						</view>
+					</view>
+				</view>
+				<view class="swiper-slide theme_1" id="card_2">
+					<view class="n-card " id="card1">
+						<view class="card-front j-front1" style="{{platinumBgImage}}">
+							<p class="card-user"></p>
+							<p class="card-name">Platinum 白金卡</p>
+						</view>
+						<view class="card-back j-back2" hidden="hidden">
+							<i class="card-rotate j-rotate2"></i>
+							<ul>
+
+							</ul>
+							<image class="card-code" src="../../images/card/card_rotate.png" alt="" />
+						</view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+	</view> -->
+	<!-- <view class="card-container" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd">
+		<view id="card_0" class="card" style="{{cardImage}}">
+				<p class="card-user">****</p>
+				<p class="card-name">{{cardText }}</p>
+			</view>
+	</view> -->
+
+	<view class="card-wrapper" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd">
+		<view id="card_0" class="card {{currentView === 0 ? 'card1-1' : currentView === 1 ? 'card1-2' : 'card1-3'}}"
+			style="{{normalBgImage}}">
+			<p class="card-user">****</p>
+			<p class="card-name">{{cardText }}</p>
+		</view>
+		<view id="card_0" class="card {{currentView === 0 ? 'card2-1' : currentView === 1 ? 'card2-2' : 'card2-3'}}"
+			style="{{goldBgImage}}">
+			<p class="card-user">****</p>
+			<p class="card-name">{{cardText }}</p>
+		</view>
+		<view id="card_0" class="card {{currentView === 0 ? '' : currentView === 1 ? 'card3-1' : 'card3-3'}}"
+			style="{{platinumBgImage}}">
+			<p class="card-user">****</p>
+			<p class="card-name">{{cardText }}</p>
+		</view>
+	</view>
+	<view class="swiper-pagination-wrapper">
+		<view class="swiper-pagination swiper-pagination-bullets">
+			<text class="swiper-pagination-bullet {{ currentView === 0 ? 'swiper-pagination-bullet-active' : ''}}"></text>
+			<text class="swiper-pagination-bullet {{ currentView === 1 ? 'swiper-pagination-bullet-active' : ''}}"></text>
+			<text class="swiper-pagination-bullet {{ currentView === 2 ? 'swiper-pagination-bullet-active' : ''}}"></text>
+		</view>
+	</view>
+	<view class="n-intro">
+		<view class="card-info j-card" wx:if="{{currentView === 0}}">
+			<h4>经典卡会员</h4>
+			<p class="xh_title">(免费加入)</p>
+			<ul>
+				<li>
+					<dl>
+						<dt>招募条件 ：</dt>
+						<dd>关注GODIVA官方微信，注册绑定GODIVA非梵荟微信小程序，即可成为经典卡会员，会籍终身有效。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>专享礼遇 ：</dt>
+						<dd>1倍会员积分：于官方指定积分赚取渠道消费，获得1倍会员积分。</dd>
+					</dl>
+				</li>
+			</ul>
+		</view>
+		<view class="card-info j-card" wx:if="{{currentView === 1}}">
+			<h4>金卡会员</h4>
+			<p class="xh_title">(有效期1年)</p>
+			<ul>
+				<li>
+					<dl>
+						<dt>招募条件 ：</dt>
+						<dd>关注GODIVA官方微信，注册绑定GODIVA非梵荟微信小程序，且一次性消费满RMB1,000元或者任意连续3个月累计消费满RMB2,000元，自条件满足之日起成为金卡会员，金卡会籍有效期（自成为金卡之日起）1年。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>保级 ：</dt>
+						<dd>有效期（过去1年）内一次性消费满RMB 1,000元或者任意连续3个月累计消费满RMB 2,000元，满足保级条件后金卡会籍可延续一年。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>降级：</dt>
+						<dd>有效期内未达到保级条件的，有效期满后降为经典卡会员。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>专享礼遇 ：</dt>
+						<dd>1.5倍会员积分：于官方指定积分赚取渠道消费，获得1.5倍会员积分。</dd>
+						<dd>会员折扣9折：于中国大陆地区线下零售专营店（GODIVA DELIGHT歌帝梵甜心随享站、机场店、免税店除外）消费，享所购商品原价金额的9折。</dd>
+						<dd>生日礼品1份：会员在生日当月将收到品牌提供的生日礼品一份，生日礼品以当月实际情况为准。</dd>
+					</dl>
+				</li>
+			</ul>
+		</view>
+		<view class="card-info j-card" wx:if="{{currentView === 2}}">
+			<h4>白金卡会员</h4>
+			<p class="xh_title">(有效期1年)</p>
+			<ul>
+				<li>
+					<dl>
+						<dt>招募条件 ：</dt>
+						<dd>关注GODIVA官方微信，注册绑定GODIVA非梵荟微信小程序，会员等级升为金卡后，一年内不同日期消费4次及以上且累计消费满RMB 10,000元，自满足条件之日起即成为白金卡会员，白金卡会籍有效期（自成为白金卡之日起）1年。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>保级 ：</dt>
+						<dd>有效期（过去1年）内不同日期消费4次及以上且累计消费满RMB 10,000元，满足保级条件后白金卡会籍可延续一年。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>降级：</dt>
+						<dd>有效期内未达到保级条件的，有效期满后降为金卡会员。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>专享礼遇 ：</dt>
+						<dd>2倍会员积分：于官方指定积分赚取渠道消费，获得2倍会员积分。</dd>
+						<dd>会员折扣8折：于中国大陆地区线下零售专营店(GODIVA DELIGHT歌帝梵甜心随享站、机场店、免税店除外)消费，享所购商品原价金额的8折。</dd>
+						<dd>生日礼品1份：会员在生日当月将收到品牌提供的生日礼品一份，生日礼品以当月实际情况为准。</dd>
+						<dd>白金卡会员专享礼篮：会员在每个自然年初，获得品牌提供的专享礼篮一份，限上一个自然年内新晋或者保级成功白金会员方可享受。</dd>
+						<dd>品牌活动：获得品牌专属活动邀请，具体活动内容以品牌通知为准。</dd>
+					</dl>
+				</li>
+			</ul>
+		</view>
+	</view>
+	<view class="n-remark">
+		<h4>备注：</h4>
+		<p><span>1、</span>官方指定积分赚取渠道为：歌帝梵中国大陆地区线下零售专营店(GODIVA DELIGHT歌帝梵甜心随享站、机场店、免税店除外)
+			、歌帝梵中国大陆地区官网（http://www.godiva.cn/）、微信小程序官方商城（GODIVA歌帝梵官方商城）。 </p>
+		<p>
+			<span>2、</span>会员积分以实际支付金额（扣除代金券，商品券，积分抵用，银行满减等非实际支付部分。另行说明的不参与积分的交易也应当扣除）计算，满人民币1元可获得积分1分，经典卡1倍积分，金卡1.5倍积分，白金卡2倍积分。
+		</p>
+		<p><span>3、</span>会员在官方指定积分赚取渠道消费可获取积分，请在交易时告知会员信息或登录会员身份进行积分。由于会员未提供会员身份而导致消费未能积分的，不补记积分。 </p>
+		<p><span>4、</span>其他积分赚取说明：	</p>
+		<p>
+			<ul class="ul-list">
+				<li>会员消费金额中，不满1元部分以1元计入积分；</li>
+				<li>会员消费积分在消费达成第二天记入积分（即累计积分）；</li>
+				<li>如发生退换货，将从累计的积分中扣除退换货部分对应的积分；</li>
+				<li>积分只在同一会员帐户内累计，不同帐户的积分不能合并。 </li>
+			</ul>
+		</p>
+		<p><span>5、</span>会员折扣与会员积分，不与其他折扣类优惠、部分活动类和支付类优惠同享，具体请参照折扣类、活动类、支付类优惠信息的规则说明。</p>
+		<p><span>6、</span>会员生日礼品以生日当月实际发放为准，限有效期内使用完毕，敬请留意您的微信非梵荟会员中心账户（GODIVA官方公众号- GODIVA非梵荟会员中心），过期不补。</p>
+		<p><span>7、</span>白金卡会员专享礼篮只针对每自然年内新晋或者保级成功白金会员，发放时间是每个自然年初，敬请关注您的微信非梵荟会员中心账户（GODIVA官方公众号-
+			GODIVA非梵荟会员中心）和短信通知，限有效期内领取，过期不补。</p>
+		<p style="margin-bottom: 1rem">
+			<span>8、</span>每个日历年（即1月1日至12月31日）累计的积分将于次年6月30日清零。（例如，截至2018年12月31日前产生的积分有效期至2019年6月30日，如2018年12月31日前产生的积分未全部使用，则会于6月30日清零。）
+		</p>
+	</view>
+</view>
+<!-- <v-card-scroll /> -->

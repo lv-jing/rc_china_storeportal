@@ -1,0 +1,103 @@
+<view class="lucky-modal-container" hidden="{{hidden}}">
+    <view class="content-container">
+        <view>
+            <view>
+                <view class="title">————活动规则————</view>
+                <view>
+                    <p>1、</p><span>抽奖活动时间： {{START_DATE_SRT}}10:00-{{END_DATE_STR}}22:00。</span>
+                </view>
+                <view>
+                    <p>2、</p><span>注册成为GODIVA会员即可参与抽奖活动。</span>
+                </view>
+                <view>
+                    <p>3、</p>
+                    <span>抽奖方式：</span>
+                </view>
+                <view class="table">
+                    <view class="row">
+                        <view class="cell" style="width: 25%;">抽奖机会类别</view>
+                        <view class="cell" style="width: 25%;">获取方式</view>
+                        <view class="cell row-last-cell" style="width: 50%;">详细说明</view>
+                    </view>
+                    <view class="row">
+                        <view class="cell">福利抽奖机会</view>
+                        <view class="cell" style="vertical-align: top;">
+                            <view class="customer-cell">
+                                <view style="height:18.5rpx"></view>
+                                <view>新注册会员</view>
+                                <view style="height:17.5rpx"></view>
+                            </view>
+                            <view>
+                                <view style="height: 32rpx;"></view>
+                                <view>邀请好友</view>
+                                <view style="height: 32rpx;"></view>
+                            </view>
+                        </view>
+                        <view class="cell" style="border-right: none; text-align: left;vertical-align: top;">
+                            <view class="customer-cell">
+                                活动期间新注册的会员可自动获得3次福利抽奖机会。
+                            </view>
+                            <view>活动期间，会员邀请好友进行注册，每成功一位，可获得3次福利抽奖机会。</view>
+                        </view>
+                    </view>
+                    <view class="row last-row">
+                        <view class="cell last-row">积分兑换抽奖</view>
+                        <view class="cell last-row">使用积分兑换</view>
+                        <view class="cell last-cell">
+                            当福利抽奖次数不为零时，抽奖将优先消耗福利抽奖次数，当福利抽奖次数为零时，继续抽奖需使用50积分兑换一次抽奖机会，用积分兑换的抽奖机会不可撤回。
+                        </view>
+                    </view>
+                </view>
+                <view>
+                    <p>4、</p><span>活动结束后，未使用的抽奖次数将自动清零。</span>
+                </view>
+                <view>
+                    <p>5、</p><span>奖池内奖品包含价值599元金装巧克力礼盒、[100元立减券(满500可用)]、
+                        [20元立减券（任意消费，散装巧克力除外）]、[5元立减券（任意消费，散装巧克力除外）]。</span>
+                </view>
+                <view class="table">
+                    <view class="row">
+                        <view class="cell" style="width: 50%;">名称</view>
+                        <view class="cell" style="width: 25%;">数量</view>
+                        <view class="cell row-last-cell" style="width: 25%;">中奖概率公式</view>
+                    </view>
+                    <view class="row">
+                        <view class="cell">价值599元金装巧克力礼盒</view>
+                        <view class="cell">50</view>
+                        <view class="cell row-last-cell">0.10%</view>
+                    </view>
+                    <view class="row">
+                        <view class="cell">100元立减券（满500可用）</view>
+                        <view class="cell">500</view>
+                        <view class="cell row-last-cell">2%-5%</view>
+                    </view>
+                    <view class="row">
+                        <view class="cell">20元立减券（任意消费，散装巧克力除外）</view>
+                        <view class="cell">1500</view>
+                        <view class="cell row-last-cell">5%-8%</view>
+                    </view>
+                    <view class="row">
+                        <view class="cell">5元立减券（任意消费，散装巧克力除外）</view>
+                        <view class="cell">5000</view>
+                        <view class="cell row-last-cell">10%-25%</view>
+                    </view>
+                    <view class="row last-row">
+                        <view class="cell last-row">未中奖</view>
+                        <view class="cell last-row">不限</view>
+                        <view class="cell row-last-cell last-row">64.9%-79.9%</view>
+                    </view>
+                </view>
+                <view>
+                    <p>6、</p><span>中奖后，优惠券将即刻发送至您的券包（若因网络信号等问题导致的延迟，请稍候片刻重新刷新），价值599元惊喜礼盒仅支持邮寄到家。</span>
+                </view>
+                <view>
+                    <p>7、</p><span>如果参与者使用不正当手段恶意获取活动奖品，品牌方有权取消其获奖资格。</span>
+                </view>
+                <view>
+                    <p>8、</p><span>如有任何问题，请咨询400 878 1926。</span>
+                </view>
+            </view>
+        </view>
+    </view>
+    <image class="close" bindtap="close" src="{{baseUrl}}/assets/godiva/images/lucky/icon_x.png"></image>
+</view>

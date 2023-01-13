@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "v-point-rule-modal" : "/components/v-rule-point-modal",
+    "v-loading": "/components/v-loading"
+  }
+}

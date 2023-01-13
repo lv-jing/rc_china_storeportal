@@ -1,0 +1,21 @@
+.container ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-decoration: none;
+}
+.container ul li {
+  margin-bottom: 20rpx;
+  width: 46%;
+  height: 50rpx;
+  border: 1px solid #53261b;
+  line-height: 50rpx;
+  text-align: center;
+}
+.container ul li:nth-of-type(odd) {
+  margin-right: 20rpx;
+}
+.active {
+  background: #53261b;
+  color: #ffe59a;
+}

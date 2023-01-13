@@ -1,0 +1,124 @@
+/* components/v-lucky-modal/index.wxss */
+.lucky-modal-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, .7);
+  z-index: 9999;
+}
+
+.content-container {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 500rpx;
+  height: 800rpx;
+  opacity: 1;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 26rpx;
+  z-index: 10000;
+  border: 2px solid #E5C497;
+  background-color: #fff;
+}
+
+.content-panel {
+  width: 200px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.lucky-image {
+  width: 200px;
+  height: 210px;
+}
+
+.close {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  bottom: -15%;
+  left: 45%;
+}
+
+.lucky_again {
+  width: 160rpx;
+  height: 55rpx;
+  display: block;
+  background: #885535;
+  font-size: 22rpx;
+  line-height: 55rpx;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.lucky-text {
+  text-align: center;
+  display: block;
+}
+
+.lucky-title {
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.lucky-award {
+  text-decoration: underline;
+  margin-top: 20px;
+}
+
+.lucky-description {
+  display: block;
+  position: absolute;
+  top: 43%;
+  font-size: 20px;
+  color: #fff;
+  width: 200px;
+  text-align: center;
+}
+
+.lucky-description-tip {
+  display: block;
+  position: absolute;
+  top: 50%;
+  color: #fff;
+  width: 200px;
+  text-align: center;
+}
+
+.lucky50 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.end-title {
+  font-size: 20px;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+  margin-top: 300rpx;
+}
+.end-desrciption {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 350rpx;
+}
+.jifen{
+  width: 80px;
+  height: 100px;
+  margin-left: 60px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

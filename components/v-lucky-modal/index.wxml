@@ -1,0 +1,34 @@
+<view class="lucky-modal-container" hidden="{{hidden}}">
+  <view class="content-container" wx:if="{{!showEndTip}}">
+    <view wx:if="{{showLuckyTip}}" class="content-panel">
+      <view>
+        <text class="lucky-text lucky-title">本次抽奖将消耗</text>
+        <image class="jifen" src="../../images/jiefen1.png"></image>
+        <text class="lucky-text lucky50">50积分</text>
+        <button class="lucky_again" bindtap="luckyNow">确认</button>
+      </view>
+    </view>
+    <view wx:elif="{{noPoints}}" class="content-panel">
+      <text class="lucky-text lucky-title">{{title}}</text>
+      <image class="jifen" src="../../images/jiefen1.png"></image>
+      <button class="lucky_again" open-type="share">邀请助力</button>
+      <text class="lucky-text" style="margin-top: 20px;" bindtap="toCoupon">助力成功+3次抽奖机会</text>
+    </view>
+    <view wx:else class="content-panel">
+      <text class="lucky-text lucky-title">{{title}}</text>
+      <image class="lucky-image" src="{{baseUrl}}/assets/godiva/images/lucky/zhongjiang.png"></image>
+      <text class="lucky-description">{{description}}</text>
+      <text class="lucky-description-tip" wx:if="{{description==='未中奖'}}">再接再励!</text>
+      <text class="lucky-description-tip" wx:elif="{{description==='100元券'}}">线下门店满500专享</text>
+      <text class="lucky-description-tip" wx:else>——线下门店专项——</text>
+      <button class="lucky_again" bindtap="luckyAgain">再抽一次</button>
+      <text class="lucky-text lucky-award" bindtap="toCoupon">查看奖励</text>
+    </view>
+    <image class="close" bindtap="close" src="{{baseUrl}}/assets/godiva/images/lucky/icon_x.png"></image>
+  </view>
+  <view wx:else class="content-container">
+     <view class="end-title">{{tip}}</view>
+     <view class="end-desrciption">{{startDate}}-{{endDate}}</view>
+    <image class="close" bindtap="close" src="{{baseUrl}}/assets/godiva/images/lucky/icon_x.png"></image>
+  </view> 
+</view>

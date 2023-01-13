@@ -1,0 +1,16 @@
+@import '../v-modal/index.wxss';
+.modal-dialog {
+  top:50%!important;
+}
+.container {
+  /* text-align: center; */
+  font-size: 26rpx;
+}
+.btn-cancel {
+  width: 70%;
+}
+.btn-confirm {
+  height: 100%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}

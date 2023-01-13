@@ -1,0 +1,181 @@
+.outer-container {
+  height: 100%;
+}
+.gift-container {
+  width: 81%;
+  height: 95%;
+  margin: 0 auto;
+  padding-top: 50rpx;
+}
+.title {
+  margin-top: 30rpx;
+  font-size: 30rpx;
+  text-align: center;
+  color: #fff;
+}
+.gift-container image {
+  width: 300rpx;
+  height: 250rpx;
+}
+.base-info-container  {
+  margin-top: 20rpx;
+}
+.info-container {
+  border-bottom: 1px dashed #53261b;
+  padding: 10rpx 0;
+  font-size: 24rpx;
+}
+
+.info-container view  {
+  line-height: 43rpx;
+  margin-right: 10rpx;
+}
+.sex-input {
+  min-width: 400rpx;
+}
+.way-container {
+  font-size: 24rpx;
+  padding-top: 40rpx
+
+}
+.way-container li {
+  margin: 30rpx 0 30rpx 30rpx;
+}
+.input-address input[type=text] {
+  border-bottom: 1px dashed #53261b;
+}
+
+.confirm-btn {
+  margin-top: 20rp;
+  background: #53261b;
+  font-size: 26rpx;
+  color: #fff5d7;
+  text-align: center;
+  border-radius: 10rpx;
+  letter-spacing: 10rpx;
+  font-weight: normal!important;
+  line-height: 50rpx;
+  padding: 10rpx;
+  margin-top: 10rpx;
+}
+.display-inline-block {
+  display: inline-block;
+}
+.advice-container {
+  font-size: 24rpx;
+}
+.mgt-40 {
+  margin-top: 40rpx;
+}
+.mgt-20 {
+  margin-top: 20rpx;
+}
+.mgb-20 {
+  margin-bottom: 20rpx;
+}
+.mgl-40 {
+  margin-left: 40rpx;
+}
+/*checkbox*/
+checkbox .wx-checkbox-input {
+  background-color: #ffffff;
+  border: none;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  color: #53261b;
+  background-color: #53261b;
+}
+
+.ui-modal-dialog {
+  width: 80%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  transform: translate(-50%, -59%);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.phone-input {
+  width: 78%;
+}
+.phone {
+  width: 120rpx;
+}
+.ui-modal-dialog.ui-modal-dia-tip {}
+
+.ui-modal-dialog .mt-header-01 {
+  width: 107%;
+  background: #743a11;
+  height: 15rpx;
+  border-radius: 15rpx;
+}
+
+.ui-modal-dialog .mt-header-02 {
+  width: 100%;
+  height: 70rpx;
+  background: #d39e3b;
+}
+
+.ui-modal-dialog .mt-main {
+  width: 100%;
+  background: linear-gradient(#f7cf5b, #b67725);
+  color: #231806;
+  text-align: center;
+  padding: 15rpx 0 20rpx;
+  font-size: 24rpx;
+}
+
+.ui-modal-dialog .mt-main image {
+  width: 300rpx;
+  height: 230rpx;
+}
+
+.ui-modal-dialog .mt-main .text-01 {
+  display: block;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.ui-modal-dialog .mt-main .text-02 {
+  display: block;
+  padding: 10rpx 20rpx;
+}
+
+.ui-modal-dialog .mt-main .btn-sure {
+  font-size: 16px;
+  margin-top: 15rpx;
+  background: linear-gradient(#783c12, #3f2405);
+  border-radius: 0;
+  color: #eac169;
+  font-weight: normal;
+  border: none;
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.mask {
+  position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+  background: rgba(0,0,0,.7);
+  z-index: 9999;
+}
+.tips {
+  color: grey;
+  font-size: 20rpx;
+}
+.send-tip {
+  text-align: left;
+  color: #53261b;
+  font-weight: 400;
+  margin-top: 30rpx;
+}
+
+.required {
+  color: red;
+}

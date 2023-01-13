@@ -1,0 +1,6 @@
+
+  <view class="inner" wx:if="{{loading}}" style="{{innerViewStyle}}">
+  <view class="load-container load4">
+		<view class="loader">Loading...</view>
+	</view>
+  </view>

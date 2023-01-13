@@ -1,0 +1,138 @@
+<!--个人信息页-->
+<!-- <image class="global-bg" src="../../images/r_goldbg.jpg" /> -->
+<view class="info-container xh_main " style="{{fullbgStyle}}">
+	<view class="profile-bg" style="{{bannerImage}}"></view>
+	<view class=" profile">
+		<view class="profile-img">
+			<!-- <open-data type="userAvatarUrl"></open-data> -->
+			<image class="avatar-img" src="{{member.headurl ? member.headurl : '../../images/member/default-avatar.png'}}"/>
+				<!-- <image class="avatar-img" src="../../images/member/default-avatar.png"/> -->
+		</view>
+		<!-- <open-data type="userNickName" class="profile-name"></open-data> -->
+		<p class="profile-name">{{nickname}}</p>
+	</view>
+	<view class="xh_message">
+		<ul class="xh_personal">
+			<li><text class="normal-text">昵称</text><input id="nickname" type="text" value="{{nickname}}" maxlength="32" bindchange="updateInfo" /></li>
+			<li>
+				<p>姓</p><input id="xing" type="text" value="{{xing}}" bindchange="updateInfo" maxlength="10" />
+			</li>
+			<li>
+				<p>名</p><input id="ming" type="text" value="{{ming}}" bindchange="updateInfo" maxlength="10" />
+			</li>
+			<li>
+				<p>性别</p>
+				<!-- <v-select  id="sex" prop-array='{{selectArray}}' currentText='{{sex}}' bind:select='updateInfo'></v-select> -->
+				<!-- <view class="sexSection">
+            <picker class="picker-container right_picker"  id="sex" value="{{index}}" range="{{selectArray}}"  range-key="value" bindchange="updateInfo">
+              <view class="picker">
+                <span  style="min-width: 1rem;">{{sex == 1 ? '男士' : '女士'}}</span>
+              </view>
+            </picker>
+          </view> -->
+
+				<view bindtap="openSexPicker">{{sex}}</view>
+				<!--  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange">
+            <picker-view-column>
+            <view wx:for="{{selectArray}}" style="line-height: 50px">{{item.value}}</view>
+            </picker-view-column>
+            </picker-view>
+          </view>
+          </view> -->
+				<!-- <radio-group id="sex" class="radio-group xh_sex" bindchange="updateInfo">
+              <label class="radio" >
+                  男<radio value="1" checked="{{sex=='1'}}"/>
+              </label>
+              <label class="radio" >
+                  女<radio value="2" checked="{{sex=='2'}}"/>
+              </label>
+          </radio-group> -->
+			</li>
+			<li>
+				<p>生日</p>
+				<!-- <view class="section">
+            <picker mode="date" value="{{date}}"  disabled="{{!birthdayLockHidden}}" start="1900-01-02" end="2020-08-22" bindchange="bindDateChange">
+              <view class="picker">
+                <span class="xh_brithday" style="min-width: 1rem;">{{date}}</span>
+              </view>
+            </picker>
+          </view> -->
+				<view class="section">
+					<span class="xh_brithday" bindtap="showBirthdayPopup">{{date}}</span>
+				</view>
+				<view style="width:50%" hidden="{{birthdayLockHidden}}">
+					<image class="xh_iconLock" src="../../images/member/icon_lock.png" />
+				</view>
+			</li>
+			<li>
+				<p>手机号码</p>
+				<view class="section"><span>{{member.username}}</span></view>
+				<view style="width:50%">
+					<image class="xh_iconLock" src="../../images/member/icon_lock.png" />
+				</view>
+			</li>
+			<li>
+				<p>所在地址</p>
+				<view catchtap='chooseAddress'>
+					<text>{{province == ''?'点我选择地区':province + '-' + city + '-' + area}}</text>
+				</view>
+			</li>
+		</ul>
+		<ul class="xh_interest">
+			<li>
+				<p>接受信息的渠道</p>
+				<span class="xh_interest_text">{{append1 ? append1 : ''}}</span>
+				<image class="add-icon" data-name="way" bindtap="openWayModal" src="../../images/member/p_icon2.png" />
+			</li>
+			<li>
+				<p>感兴趣的产品</p>
+				<span class="xh_interest_text">{{append2 ? append2: ''}}</span>
+				<image class="add-icon" data-name="product" bindtap="openWayModal" src="../../images/member/p_icon2.png" />
+			</li>
+			<li>
+				<p>感兴趣的活动</p>
+				<span class="xh_interest_text">{{append3 ? append3 : ''}}</span>
+				<image class="add-icon" data-name="activity" bindtap="openWayModal" src="../../images/member/p_icon2.png" />
+			</li>
+		</ul>
+
+	</view>
+	<view class="btn-container">
+		<button class="confirm-btn" bindtap="submit">确认</button>
+	</view>
+	<v-region-picker show="{{show}}" bind:sureSelectArea="sureSelectAreaListener" />
+	<!-- <v-sex-picker
+    id="sex"
+    show="{{sexPickerShow}}"
+    bind:onSubmit="onSexSubmit"
+    bind:onCancel="onSexCancel"
+    array="{{selectArray}}"
+    selected="{{sex}}"
+  /> -->
+
+	<v-choose-modal hidden="{{wayModalHidden}}" list="{{wayList}}" selected="{{selectedWay}}" title="- 您愿意接受Godiva信息的渠道 -" bind:close="closeWayModal" bind:confirm="confirmWayModal">
+	</v-choose-modal>
+	<v-choose-modal hidden="{{productModalHidden}}" list="{{productList}}" selected="{{selectedProduct}}" title="- 您会对GODIVA哪些产品感兴趣 -" bind:close="closeProductModal" bind:confirm="confirmProductModal">
+	</v-choose-modal>
+	<v-choose-modal hidden="{{activityModalHidden}}" list="{{activityList}}" selected="{{selectedAcitivity}}" title="- 您会对GODIVA哪些活动感兴趣 -" bind:close="closeActivityModal" bind:confirm="confirmActivityModal">
+	</v-choose-modal>
+</view>
+
+<v-loading loading="{{loading}}" />
+
+<van-action-sheet show="{{ sexPickerShow }}" cancel-text="取消" actions="{{ actions }}" bind:cancel="onClose" bind:close="onClose" bind:select="onSelect" />
+<van-notify id="van-notify" />
+
+<van-popup show="{{ birthdayPopupShow }}"  position="bottom" custom-style="height: 40%;" bind:close="hideBirthdayPopup">
+
+  <van-datetime-picker
+  type="date"
+  value="{{ currentDate }}"
+  min-date="{{ minDate }}"
+  max-date="{{maxDate}}"
+	bind:change="bindDateChange"
+  formatter="{{ formatter }}"
+  bind:cancel="hideBirthdayPopup" 
+  bind:confirm="confirmBirthdayPopup"
+/>
+</van-popup>

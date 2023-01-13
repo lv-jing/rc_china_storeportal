@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "v-card-scroll": "/components/v-card-scroll"
+  }
+}

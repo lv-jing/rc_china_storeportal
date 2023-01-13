@@ -1,0 +1,179 @@
+
+.xh_main {
+    width: 100%;
+    min-height: 100vh;
+    background-size: 100% 100%;
+}
+
+.xh_top {
+    width: 100%;
+    height: 210rpx;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
+}
+
+.xh_nav {
+    padding: 0 50rpx;
+    width: 100%;
+    height: 70rpx;
+    line-height: 70rpx;
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
+    box-sizing: border-box;
+    border-top: 1px solid #53261b;
+    border-bottom: 1px solid #53261b;
+}
+
+.xh_nav li {
+    width: 120rpx;
+    text-align: center;
+}
+
+.xh_nav li.active {
+    border-bottom: 1px solid #53261b;
+}
+
+.xh_classify {
+    margin: 0 auto;
+    margin-top: 40rpx;
+    width: 500rpx;
+    height: 60rpx;
+    border: 1px solid #53261b;
+    display: -webkit-flex;
+}
+
+.xh_classify li {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    line-height: 60rpx;
+}
+
+.xh_classify li.active {
+    color: #fdf2d0;
+    background: #53261b;
+}
+
+.xh_giftList, .xh_cashList {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    /* border: 1px solid #53261b; */
+}
+
+.xh_giftList, .xh_cashList {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+}
+
+.xh_giftList li, .xh_cashList li {
+    margin-top: 40rpx;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+
+.xh_cash {
+    padding-bottom: 50rpx;
+}
+
+.xh_giftTop, .xh_cashTop {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 50rpx;
+    height: 100%;
+    display: flex;
+    background: #fff5d7;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    padding-bottom: 30rpx;
+}
+
+.xh_giftTop image, .xh_cashTop image {
+    width: 150rpx;
+    height: 120rpx;
+    padding: 30rpx;
+}
+
+.xh_cashTop_text {
+    width: 60%;
+}
+
+.xh_cashTop_name {
+    display: block;
+    padding: 30rpx 0;
+    font-size: 26rpx;
+}
+
+.xh_cashTop_info {
+    display: block;
+    font-size: 18rpx;
+    line-height: 25rpx;
+    color: #a35509;
+}
+
+.xh_giftBtm, .xh_cashBtm {
+    width: 90%;
+    margin: 0 auto;
+    height: 50rpx;
+    font-size: 18rpx;
+    color: #fdf2d0;
+    background: #53261b;
+    line-height: 50rpx;
+    text-align: center;
+    border-bottom-left-radius: 20rpx;
+    border-bottom-right-radius: 20rpx;
+}
+
+.xh_tip1 {
+    background: #53261b;
+    color: #fdf2d0;
+    width: 120rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: center;
+    letter-spacing: 1px;
+    border-top-left-radius: 10rpx;
+    border-bottom-left-radius: 10rpx;
+    position: absolute;
+    right: 5%;
+    margin-top: 20rpx;
+}
+
+.xh_used {
+    position: absolute;
+    right: 5%;
+    margin-top: 100rpx;
+}
+
+.xh_timed {
+    position: absolute;
+    right: 5%;
+    margin-top: 50rpx;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.card-code {
+    text-align: center;
+}
+
+.code-canvas {
+    width: 100% !important;
+    height: 100rpx !important;
+}
+
+.barnum {
+    font-size: 24rpx;
+    font-weight: 600;
+    margin-top: 10rpx;
+}
+
+.modal-text-tip {
+    margin-bottom: 10px;
+    text-align: center;
+}

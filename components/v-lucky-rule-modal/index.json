@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "v-modal": "/components/v-modal",
+    "van-row": "/miniprogram_npm/@vant/weapp/row",
+    "van-col": "/miniprogram_npm/@vant/weapp/col"
+  }
+}

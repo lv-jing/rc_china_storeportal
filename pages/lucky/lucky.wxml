@@ -1,0 +1,100 @@
+<!--pages/lucky/lucky.wxml-->
+<view style="background-color: #E5C497;min-height: 850px;">
+  <view>
+    <view class="xh_top" style="{{bannerBgImage}}">
+      <image />
+    </view>
+    <button class="lucky_rule" bindtap="openRuleModal">活动规则</button>
+  </view>
+  <view>
+    <view class="lucky-panel">
+      <van-row>
+        <van-col span="12">
+          <text style="margin-left: 5px;">剩余福利抽奖机会：<text style="font-weight: 700;">{{luckyTime}}</text> 次</text>
+        </van-col>
+        <van-col span="12">
+          <p style="float: right">
+            <button class="{{ btnDisabled ? 'lucky_friend lucky-btn-disabled' : 'lucky_friend' }}"
+              open-type="share">邀请好友+3次</button>
+          </p>
+        </van-col>
+        <van-col span="24">
+          <text class="jifen-tip">*消耗50积分可兑换一次抽奖机会</text>
+        </van-col>
+      </van-row>
+      <view class="lucky-table">
+        <van-row gutter="5">
+          <van-col span="8">
+            <image style='border: solid 5px {{color[0]}}; opacity: {{opacity[0]}};'
+              src="{{baseUrl}}/assets/godiva/images/lucky/1.png" />
+          </van-col>
+          <van-col span="8">
+            <image style='border: solid 5px {{color[1]}}; opacity: {{opacity[1]}}'
+              src="{{baseUrl}}/assets/godiva/images/lucky/2.png" />
+          </van-col>
+          <van-col span="8">
+            <image style='border: solid 5px {{color[2]}}; opacity: {{opacity[2]}}'
+              src="{{baseUrl}}/assets/godiva/images/lucky/3.png" />
+          </van-col>
+        </van-row>
+        <van-row gutter="5">
+          <van-col span="8">
+            <image style='border: solid 5px {{color[7]}}; opacity: {{opacity[7]}}'
+              src="{{baseUrl}}/assets/godiva/images/lucky/4.png" />
+          </van-col>
+          <van-col span="8">
+            <image style='border: solid 5px rgba(255,255,255,0)' src="{{baseUrl}}/assets/godiva/images/lucky/5.png" />
+          </van-col>
+          <van-col span="8">
+            <image style='border: solid 5px {{color[3]}}; opacity: {{opacity[3]}} '
+              src="{{baseUrl}}/assets/godiva/images/lucky/6.png" />
+          </van-col>
+        </van-row>
+        <van-row gutter="5">
+          <van-col span="8">
+            <image style='border: solid 5px {{color[6]}}; opacity: {{opacity[6]}}'
+              src="{{baseUrl}}/assets/godiva/images/lucky/7.png" />
+          </van-col>
+          <van-col span="8">
+            <image style='border: solid 5px {{color[5]}}; opacity: {{opacity[5]}}'
+              src="{{baseUrl}}/assets/godiva/images/lucky/8.png" />
+          </van-col>
+          <van-col span="8">
+            <image style='border: solid 5px {{color[4]}}; opacity: {{opacity[4]}}'
+              src="{{baseUrl}}/assets/godiva/images/lucky/9.png" />
+          </van-col>
+        </van-row>
+      </view>
+    </view>
+    <view>
+      <p class="text-center">
+        <a class="{{ btnDisabled ? 'lucky_action lucky-btn-disabled' : 'lucky_action' }}" bindtap="luckyAgain">点击抽奖</a>
+      </p>
+    </view>
+    <view>
+      <view class="show-ticket">
+        <text style="text-decoration: underline" bindtap="toCoupon">查看我的票券</text>
+      </view>
+    </view>
+    <view class="lucky-record" wx:if="{{luckyRecords.length > 0}}">
+      <view class="lucky-record-panel">
+        <view wx:for="{{luckyRecords}}" style="{{luckyRecords.length -1 === index ? '': 'margin-bottom: 20px;'}}">
+          <van-row gutter="5" class="lucky-record-text">
+            <van-col span="6">
+              <text>{{item.drawTime}}</text>
+            </van-col>
+            <van-col span="18">
+              <text>{{item.record}}</text>
+            </van-col>
+          </van-row>
+        </view>
+      </view>
+    </view>
+  </view>
+  <v-lucky-modal hidden="{{luckyModalHidden}}" bind:onClose="onClose" bind:toCoupon="toCoupon"
+    bind:luckyAgain="luckyAgain" bind:luckyNow="luckyNow" showLuckyTip="{{showLuckyTip}}" noPoints="{{isNoPotions}}"
+    title="{{modalTitle}}" description="{{modalDescription}}" showEndTip="{{showEndTip}}" tip="{{tip}}" />
+  <v-lucky-rule-modal title="- 活动规则 -" hidden="{{ruleModalHidden}}" bind:close="closeRuleModal"
+    bind:confirm="comfiemRuleModal"></v-lucky-rule-modal>
+</view>
+<v-loading loading="{{loading}}" />

@@ -1,0 +1,56 @@
+/* components/v-point-modal/index.wxss */
+.point-modal-container {
+  position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+  background: rgba(0,0,0,.7);
+  z-index: 9999;
+}
+.content-container {
+  position: absolute;
+	margin:auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom:0;
+	width: 500rpx;
+  height: 550rpx;
+  opacity: 1;
+	background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 26rpx;
+  z-index: 10000;
+  border-radius: 30rpx;
+  border:1px solid #ffbf14 ;
+}
+
+.btn-container {
+  width: 100%;
+}
+.more_btn{
+	margin:0 auto;
+	background-color: #53261b;
+  color: #e7c774;
+  font-weight: normal;
+  font-size: 28rpx;
+	text-align: center;
+  border:1px solid #c88d0a;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+  width: 100%!important;
+  line-height: 40rpx;
+  letter-spacing: 1px;
+}
+.close {
+  width: 35rpx;
+  height: 35rpx;
+  margin-top: 20rpx;
+  margin-right: 20rpx;
+}

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-action-sheet": "/miniprogram_npm/@vant/weapp/action-sheet",
+    "v-store-picker": "/components/v-store-picker",
+    "van-field": "/miniprogram_npm/@vant/weapp/field",
+    "v-exit-modal": "/components/v-exit-modal",
+    "v-gift-modal": "/components/v-giftbaskets-modal"
+  },
+  "navigationBarTitleText": "黄金礼篮预约"
+}

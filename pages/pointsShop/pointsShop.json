@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "v-exchange-modal" : "/components/v-exchange-modal",
+    "v-loading": "/components/v-loading",
+    "v-point-modal": "/components/v-point-modal",
+    "van-overlay": "../../miniprogram_npm/@vant/weapp/overlay",
+    "van-button":"../../miniprogram_npm/@vant/weapp/button"
+  }
+}

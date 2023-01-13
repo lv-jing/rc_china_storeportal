@@ -1,0 +1,45 @@
+<view>
+  <v-modal
+    hidden="{{hidden}}"
+    title="{{title}}"
+    confimText="{{confimText}}"
+    cancelText="{{cancelText}}"
+    confirmDisabled="{{confirmDisabled}}"
+    confirmLoading="{{confirmLoading}}"
+    bind:close="close" 
+    bind:confirm="confirm">
+      <view class="container">
+          <view class="choose_num">
+            <view class="choose_msg">
+                <view class="msg_top">
+                    <image src="{{baseURL}}{{coupon.pic1}}" id="msg_pic" />
+                    <view class="msg_top_title">
+                        <p>需要积分：</p>
+                        <p class="need_integral">{{points}}</p>
+                        <view class="msg_top_num">
+                            <text bindtap="reduceNum">-</text>
+                            <input id="cur_num" class="input_num" type="text" value="{{pointNum}}" maxlength="2" disabled="disabled" />
+                            <!-- <input id="cur_integeral" type="hidden" value=""/> -->
+                            <text bindtap="addNum">+</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="msg_middle">
+                    <text class="middle_line"></text>
+                    <text class="rule">使用规则</text>
+                    <text class="middle_line"></text>
+                </view>
+                <view class="msg_btm">
+                    <rich-text nodes="{{coupon.content}}"></rich-text>
+                    <!-- <p>1. 只在www.goviewa.cn使用</p>
+                    <p>2. 满100消费立减20元</p>
+                    <p>3. 每次交易仅限使用一张现金券</p>
+                    <p>4. 每个优惠码只限使用一次</p>
+                    <p>5. 所有兑换券过期不予使用，且积分不予退还</p>
+                    <p>6. 积分一旦兑换，不予退还</p> -->
+                </view>
+            </view>
+        </view>
+      </view>
+    </v-modal>
+</view>

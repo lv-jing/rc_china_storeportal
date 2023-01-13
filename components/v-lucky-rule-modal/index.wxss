@@ -1,0 +1,85 @@
+.lucky-modal-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, .7);
+  z-index: 9999;
+}
+
+.content-container {
+  position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0px;
+    bottom: 0;
+    width: 650rpx;
+    opacity: 1;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 26rpx;
+    z-index: 10000;
+    border: 2px solid #E5C497;
+    background-color: #fff;
+    padding: 20px;
+    max-height: 900rpx;
+    overflow: auto;
+    font-size: 12px;
+}
+
+.close {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  bottom: 5%;
+  left: 45%;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.table {
+  border: 1px solid #53261b;
+  display: table;
+}
+
+.table .row {
+  border-bottom: 1px solid #53261b;
+  display: table-row;
+}
+
+.table .cell {
+  display: table-cell;
+  border-bottom: 1px solid #53261b;
+  border-right: 1px solid #53261b;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table .customer-cell {
+  border-bottom: 1px solid #53261b;
+}
+
+.table .last-cell {
+  border-right: none;
+  text-align: left;
+  border-bottom: none;
+}
+
+
+.table .last-row { 
+  border-bottom: none !important;
+}
+
+.table .row-last-cell {
+  border-right: none !important;
+}

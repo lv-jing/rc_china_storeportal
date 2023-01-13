@@ -1,0 +1,146 @@
+<view>
+    <v-modal hidden="{{hidden}}" title="{{title}}" confimText="{{confimText}}" cancelText="{{cancelText}}"
+        bind:close="close" bind:confirm="confirm">
+        <view class="container">
+
+            <view class="xh_rules">
+                <scroll-view class="scroll" upper-threshold="50" lower-threshold="50" scroll-top="20" scroll-y
+                    scroll-with-animation enable-back-to-top scroll-into-view="" bindscrolltoupper=""
+                    bindscrolltolower="" bindscroll="scroll">
+                    <view class="xh_rules_title">
+                        <!-- <image src="${base!}/assets/goviewa/images/rules/1.png"/> -->
+                        <view class="num">1</view>
+                        <p>会员积分赚取方法</p>
+                    </view>
+                    <view class="xh_rules_text">
+                        <p>1、</p><span>官方指定积分赚取渠道为：歌帝梵中国大陆地区线下零售专营店（GODIVA DELIGHT歌帝梵甜心随享站、机场店、免税店除外）
+                            、歌帝梵中国大陆地区官网（http://www.godiva.cn/）、微信小程序官方商城（GODIVA歌帝梵官方商城）。 </span>
+                    </view>
+                    <view class="xh_rules_text">
+                        <p>2、</p>
+                        <span>会员积分以实际支付金额（扣除代金券，商品券，积分抵用，银行满减等非实际支付部分。另行说明的不参与积分的交易也应当扣除）计算，满人民币1元可获得积分1分，经典卡1倍积分，金卡1.5倍积分，白金卡2倍积分。</span>
+                    </view>
+                    <view class="xh_rules_text">
+                        <p>3、</p><span>在官方指定积分赚取渠道消费可获取积分，请在交易时告知会员信息或登录会员身份进行积分。由于会员未提供会员身份而导致消费未能积分的，不补记积分。 </span>
+                    </view>
+                    <view class="xh_rules_text">
+                        <p>4、</p><span>其他积分赚取说明：</span>
+                    </view>
+                    <view class="xh_rules_text">
+                        <ul class="ul-list">
+                            <li>会员消费金额中，不满1元部分以1元计入积分；</li>
+                            <li>会员消费积分在消费达成第二天记入积分（即累计积分）；</li>
+                            <li>如发生退换货，将从累计的积分中扣除退换货部分对应的积分；</li>
+                            <li>积分只在同一会员帐户内累计，不同帐户的积分不能合并。 </li>
+                        </ul>
+                    </view>
+                    <!-- 2 -->
+                    <view class="xh_rules_title">
+                        <!-- <image src="${base!}/assets/goviewa/images/rules/2.png" /> -->
+                        <view class="num">2</view>
+                        <p>会员积分使用说明</p>
+                    </view>
+                    <view class="xh_rules_text">
+                        <p>1、</p>
+                        <span>积分可兑换礼品（包括GODIVA产品、礼品、代金券、优惠券、活动入场券等，具体品种以歌帝梵不时发布的活动介绍、海报或积分商城说明为准），积分兑换礼品不开票。兑换礼品品种以各活动介绍或海报公示或积分商城（GODIVA官方公众号-
+                            GODIVA非梵荟会员中心-积分商城）说明为准，积分兑换的礼品非质量问题不再进行退换。</span>
+                    </view>
+                    <view class="xh_rules_text">
+                        <p>2、</p><span>会员折扣与会员积分，不与其他折扣类优惠、部分活动类和支付类优惠同享，具体请参照折扣类、活动类、支付类优惠信息的规则说明。</span>
+                    </view>
+                    <view class="xh_rules_text">
+                        <p>3、</p><span>积分不得提现，不可转让。积分不具有现金价值，无论您通过何种方式获得积分，您都不得使用积分换取任何现金或金钱。</span>
+                    </view>
+                    <!-- 3 -->
+                    <view class="xh_rules_title">
+                        <!-- <image src="${base!}/assets/goviewa/images/rules/3.png" /> -->
+                        <view class="num">3</view>
+                        <p>会员积分有效期</p>
+                    </view>
+                    <view class="xh_rules_text">
+                        <p>每个日历年（即1月1日至12月31日）累计的积分将于次年6月30日清零。（例如，截至2018年12月31日前产生的积分有效期至2019年6月30日，如2018年12月31日前产生的积分未全部使用，则会于2019年6月30日清零。）
+                        </p>
+                    </view>
+                    <!-- 4 -->
+                    <view class="xh_rules_title">
+                        <!-- <image src="${base!}/assets/goviewa/images/rules/4.png" /> -->
+                        <view class="num">4</view>
+                        <p>会员积分查询：</p>
+                    </view>
+                    <view class="xh_rules_text">
+                        <p>1、</p><span>每位会员在您自己账户中（GODIVA微信官方公众号- GODIVA非梵荟会员中心-积分）查询到您的积分详细情况。</span>
+                    </view>
+                    <view class="xh_rules_text">
+                        <p>2、</p><span>购物交易完成后的第二天，可通过您自己的账户查看积分（GODIVA微信官方公众号- GODIVA非梵荟会员中心-积分）。 </span>
+                    </view>
+                    <!-- 5 -->
+                    <view class="xh_rules_title">
+                        <!-- <image src="${base!}/assets/goviewa/images/rules/5.png" /> -->
+                        <view class="num">5</view>
+                        <p>会员积分兑换</p>
+                    </view>
+                    <view class="xh_rules_text">
+                        <p>1、</p><span>累积到特定数量的积分后，您可以通过积分商城（GODIVA微信官方公众号-
+                            GODIVA非梵荟会员中心-积分商城）或者歌帝梵中国大陆地区官网（http://www.godiva.cn/）参与积分相关各类活动。详见具体活动的详情说明。</span>
+                    </view>
+                    <view class="xh_rules_text">
+                        <p>2、</p><span>兑换成功后将从会员帐户中扣减相应积分分值；</span>
+                    </view>
+                    <view class="xh_rules_text">
+                        <p>3、</p><span>积分兑换礼品包括GODIVA产品、礼品、代金券、优惠券、活动入场券等，具体品种以歌帝梵不时发布的活动介绍、海报或积分商城说明为准，
+                            兑换的内容会不定期更新，兑换活动均有有效期限，逾期不予兑换；兑换一旦成功，不可撤回。</span>
+                    </view>
+                    <view class="xh_rules_text">
+                        <p>4、</p><span>每次兑换活动数量有限，先兑先得，兑完为止；</span>
+                    </view>
+                    <view class="xh_rules_text">
+                        <p>5、</p><span>参与积分兑换活动和使用所兑换的权益均需会员本人完成。</span>
+                    </view>
+                    <view class="xh_rules_text">
+                        <p>6、</p><span>由于积分兑换非质量问题不提供更换或退货服务，所以请您细心看准后再进行兑换；</span>
+                    </view>
+                    <!-- 6 -->
+                    <view class="xh_rules_title">
+                        <!-- <image src="${base!}/assets/goviewa/images/rules/6.png" /> -->
+                        <view class="num">6</view>
+                        <p>会员积分其他事项</p>
+                    </view>
+                    <view class="xh_rules_text">
+                        <p>1、</p>
+                        <span>符合条件未获得积分的处理方式：如您在订单符合要求的情况下未自动获得积分，请您拨打400-878-1926顾客关怀热线，在核实了您的订单信息及个人信息后，我们将为您补计积分，敬请见谅。</span>
+                    </view>
+                    <view class="xh_rules_text">
+                        <p>2、</p><span>在会员折扣与会员积分适用的情况下，请在结账前提供会员号或者手机号享受会员折扣与积分。交易完成后，不再追溯会员折扣或补录积分。</span>
+                    </view>
+                    <view class="xh_rules_text">
+                        <p>3、</p><span>会员生日礼品以生日当月实际发放为准，限有效期内使用完毕，敬请留意您的微信非梵荟会员中心账户（GODIVA微信官方公众号-
+                            GODIVA非梵荟会员中心），过期不补。</span>
+                    </view>
+                    <view class="xh_rules_text">
+                        <p>4、</p><span>白金卡会员专享礼篮只针对每自然年内新晋或者保级成功白金会员，发放时间是每个自然年初，敬请关注您的微信非梵荟会员中心账户（GODIVA微信官方公众号-
+                            GODIVA非梵荟会员中心）和短信通知，限有效期内领取，过期不补。</span>
+                    </view>
+                    <view class="xh_rules_text">
+                        <p>5、</p><span>如果发现盗用、滥用积分和/或会员权益，或使用作弊、欺诈等不正当手段骗取积分和/或会员权益等情形，歌帝梵有权视情况采取如下措施：</span>
+                    </view>
+                    <view class="xh_rules_text">
+                        <ul class="ul-list">
+                            <li>我们有权利根据实际情况在进行会员级别升级时不计入相关交易金额或认定相关交易无效；</li>
+                            <li>积分将可能被取消、扣除、调整，会员积分的累积和使用将会受到限制；</li>
+                            <li>中止、冻结相应的会员账户；</li>
+                            <li>注销相应的会员账户；</li>
+                            <li>依法适用的其他措施。</li>
+                        </ul>
+                    </view>
+                    <view class="xh_rules_text">
+                        <p>6、</p><span>歌帝梵有权对会员体系和会员权益做不定期的修改或调整，恕不做另行通知，敬请留意。</span>
+                    </view>
+                </scroll-view>
+
+            </view>
+            <view class="xh_progress">
+                <view class="xh_progress_view" style="height: {{scrollTop}}"></view>
+            </view>
+        </view>
+    </v-modal>
+</view>

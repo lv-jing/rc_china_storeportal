@@ -1,0 +1,5 @@
+<!--pages/gzh/gzh.wxml-->
+<!-- <web-view src="https://mp.weixin.qq.com/s/DGWl5Qazc6sOtZV-E7j_Vg"></web-view> -->
+<view class="container">
+  <image class="qr" src="https://wechatsys.godiva.cn/assets/godiva/images/softice/qr_code.jpg" mode="aspectFill" style="width: 100%; height: 1000rpx" show-menu-by-longpress="{{true}}"></image>
+</view>

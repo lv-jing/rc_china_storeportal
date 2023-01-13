@@ -1,0 +1,39 @@
+<view>
+<view class="xh_main">
+    <view class="xh_top" style="{{bannerBgImage}}">
+        <image src="../../images/r_logo.png" />
+    </view>
+    <!-- 跳转列表 -->
+    <view class="xh_integral_box mgt200" style="{{infoBgImage}}">
+        <view class="xh_integral_tip_container">
+          <view class="xh_integral_tip">
+              <image src="../../images/award/e_icon1.png" />
+              <p>完善信息</p>
+          </view>
+          <a class="xh_goto" bindtap="goCompleteMember">立即前往</a>
+        </view>
+    </view>
+
+    <!-- tips -->
+    <p class="xh_tips">＊完善信息有助我们为您提供更贴心的优惠与福利喔</p>
+
+    <!-- <view class="xh_integral_box" style="{{shareBgImage}}">
+        <view class="xh_integral_tip xh_integral_tip1">
+            <image src="../../images/award/e_icon2.png"  />
+            <p>邀请好友</p>
+        </view>
+        <a class="xh_goto" bindtap="share">立即前往</a>
+    </view> -->
+
+    <!-- <view class="xh_integral_box" style="{{pointsBgImage}}">
+        <view class="xh_integral_tip xh_integral_tip2">
+            <image src="../../images/award/e_icon3.png"  />
+            <p>积分乐园</p>
+        </view>
+        <a class="xh_goto" bindtap="toPointsLeyuan">立即前往</a>
+    </view> -->
+</view>
+ <view class="xh_blackbg" bindtap="hide" hidden="{{shareHidden}}">
+    <image src="../../images/award/share.png" />
+</view>
+</view>

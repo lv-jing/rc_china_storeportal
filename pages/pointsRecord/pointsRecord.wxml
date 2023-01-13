@@ -1,0 +1,4 @@
+<view class="wrapper">
+  <v-tab tab="{{type}}" record="{{record}}"></v-tab>
+</view>
+<v-loading loading="{{loading}}" />

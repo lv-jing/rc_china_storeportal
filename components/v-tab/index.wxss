@@ -1,0 +1,94 @@
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-tab-img {
+  width: 100%;
+  text-align: center;
+  height: 210rpx;
+  background-size: 100% 100%;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  -webkit-justify-content: space-between;
+}
+.swiper-tab {
+  width: 100%;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.swiper-tab-list {
+  font-size: 24rpx;
+  display: inline-block;
+  width: 33.33%;
+}
+
+.on {
+  border-bottom: 2px solid #53261b;
+}
+
+.swiper-box {
+  display: block;
+  height: 80%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-box view {
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.xh_frozenList {
+  margin: 0 auto;
+  margin-top: 60rpx;
+  width: 90%;
+  height: auto;
+}
+
+.xh_frozenList li {
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  height: 150rpx;
+  border: 1px solid #53261b;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  height: 150rpx;
+}
+
+.xh_left {
+  /* line-height: 100rpx; */
+}
+
+.xh_left p {
+  display: block;
+}
+
+.xh_right {
+  color: #53261b;
+  line-height: 60rpx;
+}
+
+.bg-back {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.title {
+  width: 450rpx;
+  text-align: left;
+}
+
+.max-heigth {
+  max-height: 1400rpx;
+  overflow: auto;
+}

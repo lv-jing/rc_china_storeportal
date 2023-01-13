@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-row": "/miniprogram_npm/@vant/weapp/row",
+    "van-col": "/miniprogram_npm/@vant/weapp/col",
+    "v-loading": "/components/v-loading",
+    "v-lucky-modal": "/components/v-lucky-modal",
+    "v-lucky-rule-modal" : "/components/v-lucky-rule-modal"
+  }
+}

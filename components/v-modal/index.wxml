@@ -1,0 +1,17 @@
+
+<view class="modal-mask"  bindtap="close" catchtouchmove="preventTouchMove" hidden="{{hiddenmodalput}}">
+</view>
+<view class="modal-dialog" hidden="{{hiddenmodalput}}">
+  <view class="modal-title" wx:if="{{title}}">{{title}}</view>
+  <view class="modal-content">
+    <slot></slot>
+  </view>
+  <view class="modal-footer">
+    <button  hidden="{{!showConfirmButton}}" class="btn-confirm" bindtap="confirm" data-status="confirm" disabled="{{confirmDisabled}}" loading="{{confirmLoading}}">{{confimText}}  
+    </button>
+    <button class="btn-cancel {{cancelDisabled ? 'is-disabled' : ''}}" bindtap="close" data-status="cancel"
+    disabled="{{cancelDisabled}}" loading="{{cancelLoading}}"
+    >{{cancelText}}</button>
+  </view>
+</view>
+

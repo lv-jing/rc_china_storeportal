@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "v-region-picker": "/components/v-region-picker",
+    "v-modal": "/components/v-modal",
+    "v-choose-modal": "/components/v-choose-modal",
+    "v-select": "/components/v-select",
+    "v-loading": "/components/v-loading",
+    "van-action-sheet": "/miniprogram_npm/@vant/weapp/action-sheet",
+    "van-notify": "../../miniprogram_npm/@vant/weapp/notify",
+    "van-popup": "../../miniprogram_npm/@vant/weapp/popup",
+    "van-datetime-picker": "../../miniprogram_npm/@vant/weapp/datetime-picker"
+  }
+}

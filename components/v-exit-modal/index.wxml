@@ -1,0 +1,35 @@
+<!-- components/v-exit-modal/index.wxml
+<view>
+  <v-modal
+    hidden="{{hidden}}"
+    title="{{title}}"
+    confimText="{{confimText}}"
+    cancelText="{{cancelText}}"
+    isCustomerFooter="true"
+    bind:close="close" 
+    bind:confirm="confirm">
+      <view class="container">
+        <text>您还不是GODIVA会员，需要注册成会员吗？</text>
+      </view>
+      <view name="footer">
+      1111111
+      </view>
+    </v-modal>
+</view> -->
+
+
+<view class="modal-mask"  bindtap="close" catchtouchmove="preventTouchMove" hidden="{{hidden}}">
+</view>
+<view class="modal-dialog" hidden="{{hidden}}">
+  <view class="modal-title" wx:if="{{title}}">{{title}}</view>
+  <view class="modal-content">
+    <view class="container">
+        <text>您还不是GODIVA会员，需要注册成会员吗？非会员将无法正常使用该程序。</text>
+      </view>
+  </view>
+  <view class="modal-footer">
+    <button class="btn-confirm" bindtap="confirm" data-status="confirm">{{confimText}}  
+    </button>
+    <navigator class="ui-btn btn-cancel " target="miniProgram" open-type="exit">{{cancelText}}</navigator>
+  </view>
+</view>

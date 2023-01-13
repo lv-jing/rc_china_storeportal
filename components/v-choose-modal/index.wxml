@@ -1,0 +1,17 @@
+<!--components/v-choose-modal/index.wxml-->
+<view>
+  <v-modal
+    hidden="{{hidden}}"
+    title="{{title}}"
+    confimText="{{confimText}}"
+    cancelText="{{cancelText}}"
+    bind:close="close" 
+    bind:confirm="confirm">
+      <view class="container">
+        <ul >
+          <li wx:for="{{list_}}" bindtap="chooseItem" data-item="{{item}}" 
+          class="{{item.active ? 'active': ''}}">{{item.name}}</li>
+        </ul>
+      </view>
+    </v-modal>
+</view>

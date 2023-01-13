@@ -1,0 +1,147 @@
+.xh_top {
+  padding-top: 1px;
+  width: 100%;
+  height: 210rpx;
+  background-size: 100% 100%;
+  text-align: center;
+}
+.xh_top image {
+  margin-top: 120rpx;
+  width: 200rpx;
+  height: 200rpx;
+}
+.question_box {
+  margin: 0 auto;
+  margin-top: 100rpx;
+  width: 90%;
+  height: auto;
+}
+.xh_email {
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 1px solid #53261b;
+  border-radius: 25rpx;
+  box-sizing: border-box;
+}
+
+.xh_email input {
+  width: 100%;
+  height: 100%;
+  padding-left: 20rpx;
+  background: rgba(0,0,0,0);
+  font-size: 26rpx;
+}
+.emailHolder {
+  color: #53261b ;
+  font-size: 26rpx;
+  letter-spacing: 1px;
+}
+.wrapper {
+  margin: 0 auto;
+  width: 90%;
+}
+.wrapper p {
+  font-size: 24rpx;
+  display: block;
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+}
+.wrapper ul{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 50rpx;
+}
+.wrapper ul li {
+  width: 50%;
+  height: 50rpx;
+  line-height: 50rpx;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.wrapper ul li text {
+  letter-spacing: 1px;
+}
+
+.next_page_box {
+  width: 90%;
+  position: fixed;
+  bottom: 20rpx;
+  display: -webkit-flex;
+  -webkit-justify-content: center;
+}
+.prev_page, .next_page {
+  width: 50rpx;
+  height: 30rpx;
+}
+.prev_page {
+  margin-right: 30rpx;
+  transform: scaleY(-1);
+}
+.mgt100 {
+  margin-top: 100rpx;
+}
+.other {
+  width: 100%!important;
+}
+.otherInput{
+  width: 350rpx;
+  margin-left: 10rpx;
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  background: rgba(0,0,0,0);
+  border-bottom: 1px solid #53261b;
+}
+.xh_agreement {
+  text-align: center;
+  line-height: 50rpx;
+  height: 50xrpx;
+}
+.xh_square1 {
+  padding: 4rpx;
+  width: 28rpx;
+  height: 28rpx;
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 1px solid #53261b;
+  margin-right: 10rpx;
+  display: inline-block;
+  position: relative;
+  top: 6rpx;
+}
+.xh_square1 text {
+  width: 100%;
+  height: 100%;
+  background: #53261b;
+}
+.display {
+  display: block;
+}
+.displayNone {
+  display: none;
+}
+.xh_comfirm {
+  width: 100%;
+  height: 70rpx;
+  margin-top: 20rpx;
+  text-align: center;
+  line-height: 70rpx;
+  background: #53261b;
+  border-radius: 10rpx;
+}
+.xh_comfirm button {
+  background: transparent;
+  letter-spacing: 1px;
+  font-size: 26rpx;
+  color: #ffe59a;
+  font-weight: normal;
+}
+
+.xh_comfirm button[disabled] {
+  background: transparent;
+  letter-spacing: 1px;
+  font-size: 26rpx;
+  color: #ffe59a;
+  font-weight: normal;
+}

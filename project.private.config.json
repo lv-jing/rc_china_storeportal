@@ -1,0 +1,81 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "我的账户",
+          "pathName": "pages/guide/guide",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "注册授权",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 2,
+          "name": "新春福利首饰盒",
+          "pathName": "pages/giftBaskets/giftBaskets",
+          "query": "phone=18723165431",
+          "scene": null
+        },
+        {
+          "id": 3,
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "register_channel=bilibili",
+          "scene": 1047
+        },
+        {
+          "id": 4,
+          "name": "积分商城",
+          "pathName": "pages/pointsShop/pointsShop",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/test/test",
+          "pathName": "pages/test/test",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "冰淇淋活动预约",
+          "pathName": "pages/activity/activity",
+          "query": "source=1",
+          "scene": null,
+          "launchMode": "default"
+        },
+        {
+          "name": "协议目录",
+          "pathName": "pages/agreement/agreement",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "公众号文章引流页",
+          "pathName": "pages/gzh/gzh",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

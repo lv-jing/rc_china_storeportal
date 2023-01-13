@@ -1,0 +1,22 @@
+{
+  "name": "scrm-miniprogram-prod",
+  "version": "1.0.0",
+  "description": "Godiva",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@codeup.teambition.com:5e1bceda0bb72e0001980a69/scrm-miniprogram-prod.git"
+  },
+  "keywords": [
+    "Godiva"
+  ],
+  "author": "yangxiaoyi",
+  "license": "ISC",
+  "dependencies": {
+    "@vant/weapp": "^1.5.0",
+    "wxbarcode": "^1.0.2"
+  }
+}

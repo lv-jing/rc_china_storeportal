@@ -1,0 +1,59 @@
+<view class="container">
+    <view class="swiper-tab-img" style="{{bgImage}}">
+    </view>
+    <view style="height: 100%;{{fullbgStyle}}">
+        <view class="swiper-tab">
+            <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">
+                冻结积分
+            </view>
+            <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">
+                消费记录
+            </view>
+            <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">
+                互动积分
+            </view>
+        </view>
+        <swiper current="{{currentTab}}" class="swiper-box" duration="300"
+                bindchange="bindChange">
+            <swiper-item class="max-heigth">
+                <view class="xh_frozenList">
+                    <ul>
+                        <li wx:for="{{frozzePointList}}">
+                            <view class="xh_left">
+                                <p style="text-align: left;">{{item.createTime}}</p>
+                                <p class="title">{{item.title}}</p>
+                            </view>
+                            <view class="xh_right">{{item.source > 0 ? '+' : ''}}{{item.source}}积分</view>
+                        </li>
+                    </ul>
+                </view>
+            </swiper-item>
+            <swiper-item class="max-heigth">
+                <view class="xh_frozenList">
+                    <ul>
+                        <li wx:for="{{buyRecordList}}">
+                            <view class="xh_left">
+                                <p style="text-align: left;">{{item.createTime}}</p>
+                                <p class="title">{{item.title}}</p>
+                            </view>
+                            <view class="xh_right">{{item.memo ? item.memo : 0 }}元</view>
+                        </li>
+                    </ul>
+                </view>
+            </swiper-item>
+            <swiper-item class="max-heigth">
+                <view class="xh_frozenList">
+                    <ul>
+                        <li wx:for="{{hudongPointLis}}">
+                            <view class="xh_left">
+                                <p style="text-align: left;">{{item.createTime}}</p>
+                                <p class="title">{{item.title}}</p>
+                            </view>
+                            <view class="xh_right">{{item.source > 0 ? '+' : ''}}{{item.source}}积分</view>
+                        </li>
+                    </ul>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>

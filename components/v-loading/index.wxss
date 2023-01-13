@@ -1,0 +1,70 @@
+.inner {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+}
+.load4 .loader {
+  font-size: 26rpx;
+  margin: 5em auto;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-animation: load4 1.3s infinite linear;
+  animation: load4 1.3s infinite linear;
+}
+@-webkit-keyframes load4 {
+  0%,
+  100% {
+    box-shadow: 0em -3em 0em 0.2em #53261b, 2em -2em 0 0em #53261b, 3em 0em 0 -0.5em #53261b, 2em 2em 0 -0.5em #53261b, 0em 3em 0 -0.5em #53261b, -2em 2em 0 -0.5em #53261b, -3em 0em 0 -0.5em #53261b, -2em -2em 0 0em #53261b;
+  }
+  12.5% {
+    box-shadow: 0em -3em 0em 0em #53261b, 2em -2em 0 0.2em #53261b, 3em 0em 0 0em #53261b, 2em 2em 0 -0.5em #53261b, 0em 3em 0 -0.5em #53261b, -2em 2em 0 -0.5em #53261b, -3em 0em 0 -0.5em #53261b, -2em -2em 0 -0.5em #53261b;
+  }
+  25% {
+    box-shadow: 0em -3em 0em -0.5em #53261b, 2em -2em 0 0em #53261b, 3em 0em 0 0.2em #53261b, 2em 2em 0 0em #53261b, 0em 3em 0 -0.5em #53261b, -2em 2em 0 -0.5em #53261b, -3em 0em 0 -0.5em #53261b, -2em -2em 0 -0.5em #53261b;
+  }
+  37.5% {
+    box-shadow: 0em -3em 0em -0.5em #53261b, 2em -2em 0 -0.5em #53261b, 3em 0em 0 0em #53261b, 2em 2em 0 0.2em #53261b, 0em 3em 0 0em #53261b, -2em 2em 0 -0.5em #53261b, -3em 0em 0 -0.5em #53261b, -2em -2em 0 -0.5em #53261b;
+  }
+  50% {
+    box-shadow: 0em -3em 0em -0.5em #53261b, 2em -2em 0 -0.5em #53261b, 3em 0em 0 -0.5em #53261b, 2em 2em 0 0em #53261b, 0em 3em 0 0.2em #53261b, -2em 2em 0 0em #53261b, -3em 0em 0 -0.5em #53261b, -2em -2em 0 -0.5em #53261b;
+  }
+  62.5% {
+    box-shadow: 0em -3em 0em -0.5em #53261b, 2em -2em 0 -0.5em #53261b, 3em 0em 0 -0.5em #53261b, 2em 2em 0 -0.5em #53261b, 0em 3em 0 0em #53261b, -2em 2em 0 0.2em #53261b, -3em 0em 0 0em #53261b, -2em -2em 0 -0.5em #53261b;
+  }
+  75% {
+    box-shadow: 0em -3em 0em -0.5em #53261b, 2em -2em 0 -0.5em #53261b, 3em 0em 0 -0.5em #53261b, 2em 2em 0 -0.5em #53261b, 0em 3em 0 -0.5em #53261b, -2em 2em 0 0em #53261b, -3em 0em 0 0.2em #53261b, -2em -2em 0 0em #53261b;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0em 0em #53261b, 2em -2em 0 -0.5em #53261b, 3em 0em 0 -0.5em #53261b, 2em 2em 0 -0.5em #53261b, 0em 3em 0 -0.5em #53261b, -2em 2em 0 0em #53261b, -3em 0em 0 0em #53261b, -2em -2em 0 0.2em #53261b;
+  }
+}
+@keyframes load4 {
+  0%,
+  100% {
+    box-shadow: 0em -3em 0em 0.2em #53261b, 2em -2em 0 0em #53261b, 3em 0em 0 -0.5em #53261b, 2em 2em 0 -0.5em #53261b, 0em 3em 0 -0.5em #53261b, -2em 2em 0 -0.5em #53261b, -3em 0em 0 -0.5em #53261b, -2em -2em 0 0em #53261b;
+  }
+  12.5% {
+    box-shadow: 0em -3em 0em 0em #53261b, 2em -2em 0 0.2em #53261b, 3em 0em 0 0em #53261b, 2em 2em 0 -0.5em #53261b, 0em 3em 0 -0.5em #53261b, -2em 2em 0 -0.5em #53261b, -3em 0em 0 -0.5em #53261b, -2em -2em 0 -0.5em #53261b;
+  }
+  25% {
+    box-shadow: 0em -3em 0em -0.5em #53261b, 2em -2em 0 0em #53261b, 3em 0em 0 0.2em #53261b, 2em 2em 0 0em #53261b, 0em 3em 0 -0.5em #53261b, -2em 2em 0 -0.5em #53261b, -3em 0em 0 -0.5em #53261b, -2em -2em 0 -0.5em #53261b;
+  }
+  37.5% {
+    box-shadow: 0em -3em 0em -0.5em #53261b, 2em -2em 0 -0.5em #53261b, 3em 0em 0 0em #53261b, 2em 2em 0 0.2em #53261b, 0em 3em 0 0em #53261b, -2em 2em 0 -0.5em #53261b, -3em 0em 0 -0.5em #53261b, -2em -2em 0 -0.5em #53261b;
+  }
+  50% {
+    box-shadow: 0em -3em 0em -0.5em #53261b, 2em -2em 0 -0.5em #53261b, 3em 0em 0 -0.5em #53261b, 2em 2em 0 0em #53261b, 0em 3em 0 0.2em #53261b, -2em 2em 0 0em #53261b, -3em 0em 0 -0.5em #53261b, -2em -2em 0 -0.5em #53261b;
+  }
+  62.5% {
+    box-shadow: 0em -3em 0em -0.5em #53261b, 2em -2em 0 -0.5em #53261b, 3em 0em 0 -0.5em #53261b, 2em 2em 0 -0.5em #53261b, 0em 3em 0 0em #53261b, -2em 2em 0 0.2em #53261b, -3em 0em 0 0em #53261b, -2em -2em 0 -0.5em #53261b;
+  }
+  75% {
+    box-shadow: 0em -3em 0em -0.5em #53261b, 2em -2em 0 -0.5em #53261b, 3em 0em 0 -0.5em #53261b, 2em 2em 0 -0.5em #53261b, 0em 3em 0 -0.5em #53261b, -2em 2em 0 0em #53261b, -3em 0em 0 0.2em #53261b, -2em -2em 0 0em #53261b;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0em 0em #53261b, 2em -2em 0 -0.5em #53261b, 3em 0em 0 -0.5em #53261b, 2em 2em 0 -0.5em #53261b, 0em 3em 0 -0.5em #53261b, -2em 2em 0 0em #53261b, -3em 0em 0 0em #53261b, -2em -2em 0 0.2em #53261b;
+  }
+}

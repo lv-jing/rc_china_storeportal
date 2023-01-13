@@ -1,0 +1,114 @@
+<view class="container">
+  <view style="background-image: url(https://wechatsys.godiva.cn/assets/godiva/images/softice/softBanner.png);" class="banner {{showModal || showDrawer ? 'blur' : ''}}"></view>
+  <view class="common-content-wrapper  {{showModal || showDrawer ? 'blur' : ''}}">
+    <!-- join -->
+    <view class="join-zone">
+      <button size="mini" bindtap="onJoin" wx:if="{{phone}}">
+        <view class="inner-btn-text">我是会员，点击参加活动</view>
+      </button>
+      <button size="mini" open-type="getPhoneNumber" bindgetphonenumber="onGetPhoneNumber" wx:else>
+        <view class="inner-btn-text">我是会员，点击参加活动</view>
+      </button>
+    </view>
+    <!-- description -->
+    <view class="desc">
+      GODIVA诚邀您参加浓醇经典软冰淇淋线下品尝日活动，会员在活动期间可领取软冰淇淋礼券1张（随机获取软冰淇淋免费品尝券或买一送一券）。活动仅限8月8日0点前成功注册为GODIVA会员的用户参与。本次活动专用券全国仅46200份，先到先得，领完即止。
+    </view>
+    <!-- 提示注册 -->
+    <view style="font-size: 28rpx;">还不是GODIVA会员？
+      <text bindtap="toRegisterPage" style="text-decoration: underline; font-weight: bold;">立即注册</text>享受会员权益与精彩活动。
+    </view>
+    <!-- rules -->
+    <view class="rule">
+      <view class="rule-content-wrapper">
+        <view class="title" style="font-weight: bold;">活动规则:</view>
+        <view>
+          1. 本次活动仅限GODIVA在8月8日0点前注册的会员参与。会员需通过小程序的活动专属页面点击“我是会员，点击参加活动
+          ”登记参与活动并完成领券。
+        </view>
+        <view>2. 会员在领券时需选择活动门店及时段。根据疫情管控要求， GODIVA保留调整活动门店的权利。</view>
+        <view>
+          3. 每位会员仅能参加1次活动。成功预约活动的会员将自动收到活动专用券1份（领取至GODIVA会员小程序卡券包），专用券为随机派发，先到先得，不可指定，不可置换。
+        </view>
+        <view>4. 活动专用券仅在指定的活动时间段内有效，过期作废，不挂失、不找零、不可更换产品，不可兑换现金或其他卡券。</view>
+        <view>5. 会员到店参与活动，应按店员指导出示相应的活动专用券，并由店员进行券核销。如因会员自行操作导致券作废，不予补发。</view>
+        <view>
+          6. 如需获取更多活动详情，请详询4006281926。
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- modal -->
+  <view class="modal" wx:if="{{ showModal }}">
+    <view class="content">
+      {{popupText}}
+      <view class="btn">
+        <text class="clickable-area-extend" bindtap="onModalBtnClick">{{popupButtonText}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 成功领券弹窗 -->
+  <view class="modal modal__success-join" wx:if="{{ showModal &&  getQuanSuccess}}">
+    <view class="content">
+      <text>恭喜您获得</text>
+      <text>{{popupText}}</text>
+      <text>点击“确定”查看已获得的票券</text>
+      <view class="btn">
+        <text class="clickable-area-extend" bindtap="gotoCoupon">确定</text>
+      </view>
+    </view>
+  </view>
+  <!-- 弹出公众号关注弹窗 -->
+  <view class="modal" wx:if="{{ showNoFollowModal }}">
+    <view class="content">
+      您不符合本次活动资格。
+      更多歌帝梵精彩活动与资讯，<text bindtap="toGZH" style="text-decoration: underline;">请关注公众号</text>
+      <view class="btn">
+        <text class="clickable-area-extend" bindtap="onNoFollowBtnClick">关闭</text>
+      </view>
+    </view>
+  </view>
+  <!-- 绑定会员modal -->
+  <view class="modal modal__member-bind" wx:if="{{ showBindMemberModal }}">
+    <view class="content">
+      <text class="title">您还没有绑定小程序会员，请立即绑定！</text>
+      <text class="sub-title">绑定即代表您同意</text>
+      <text bindtap="toAgreementPage" class="sub-title" style="text-decoration: underline;">《歌帝梵用户注册协议》</text>
+      <view class="btn">
+        <button wx:if="{{!phone}}" open-type="getPhoneNumber" bindgetphonenumber="onGetPhoneNumber">
+          绑定小程序会员
+        </button>
+        <button bindtap="onBindBtnClick" wx:if="{{phone}}">请授权登录</button>
+      </view>
+      <image bindtap="onUserCloseBindModal" src="/images/point-shop/close.png" class="icon icon-close"></image>
+    </view>
+  </view>
+  <!-- modal for drawer for forbidden click bottom elmts. -->
+  <view class="modal" hidden="{{ !showDrawer }}"></view>
+  <!-- drawer 选择门店和时间 -->
+  <div class="drawer {{showDrawer ? 'drawer--up':'drawer--down'}}">
+    <view class=" join-form-set-zone">
+      <view class="set-item">
+        <view class="tip-title">*请选择活动门店</view>
+        <picker mode="multiSelector" bindchange="bindStoreMultiPickerChange" bindcolumnchange="bindStoreMultiPickerColumnChange" value="{{ selectedStoreIndex }}" range="{{storeCollection}}" range-key="name">
+          <view class="val" wx:if="{{selectedStoreVal}}">
+            {{originalStoreData[finalSelectedStoreIndex[0]].name}} {{originalStoreData[finalSelectedStoreIndex[0]].elementList[finalSelectedStoreIndex[1]].name}} {{originalStoreData[finalSelectedStoreIndex[0]].elementList[finalSelectedStoreIndex[1]].elementList[finalSelectedStoreIndex[2]].name}}
+          </view>
+          <view wx:if="{{!selectedStoreVal}}" class="val">请选择活动门店</view>
+        </picker>
+      </view>
+      <view class="set-item" wx:if="{{selectedStoreVal}}">
+        <view class="tip-title">*请选择活动时段</view>
+        <picker mode="multiSelector" range="{{dateRange}}" range-key="name" bindcolumnchange="bindDateRangePickerColumnChange" bindchange="bindDateRangePickerChange">
+          <view class="val">
+            {{dateRange[0][selectedDateRangeIndex[0]].name}} {{dateRange[1][selectedDateRangeIndex[1]].name}} {{dateRange[2][selectedDateRangeIndex[2]].name}}
+          </view>
+        </picker>
+      </view>
+      <view style="text-align: center;">
+        <button size="mini" bindtap="onSumbit">确认领券</button>
+      </view>
+    </view>
+    <!-- <image bindtap="toggelDrawer" src="/images/point-shop/close.png" class="icon icon-close"></image> -->
+  </div>
+</view>
